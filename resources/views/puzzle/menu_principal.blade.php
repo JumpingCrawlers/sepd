@@ -20,7 +20,7 @@
             </div>
         </div>
         
-        <div id="navbarSupportedContent" class="row text-nowrap h-100 collapse navbar-collapse">
+        <div id="navbarSupportedContent" data-test="navbarSupportedContent" class="row text-nowrap h-100 collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item active position-relative">
                     <a class="nav-link mx-auto" href="/">Institucional</a>
