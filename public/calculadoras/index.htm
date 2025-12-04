@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/calc.css" />
+	<script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/calc.js"></script>
+</head>
+<body>
+<form id="calcform" name="calcform" action="calc.htm">
+<input type="hidden" id="formula" name="formula" />
+<div id="mainContainer">
+
+    <div style="padding-left:5px;"><img src="images/logo.jpg" /></div>
+    <div id="innerContainer">
+        <div id="titulo"></div>
+        <div id="descripcion"></div>
+        <div id="subtitulo"></div>
+        <div id="epi3_inputvariables" style="visibility:hidden;"><!-- Sólo para formula epi3 -->
+            <br/>
+            <div class="titulo">1. C&aacute;lculos sobre la muestra del estudio</div>
+            <br/>
+            <div class="bg_purple"><div class="bl_purple"><div class="br_purple"><div class="tl_purple"><div class="tr_purple"><span class="titulo2">Prueba positiva enfermos</span><input type="text" id="var1" name="var1" onkeypress="javascript: return onlyNumbers(this,event);"> </div></div></div></div></div><div class="clear_purple">&nbsp;</div>
+            <br/>
+            <div class="bg_purple"><div class="bl_purple"><div class="br_purple"><div class="tl_purple"><div class="tr_purple"><span class="titulo2">Prueba positiva no-enfermos</span><input type="text" id="var2" name="var2" onkeypress="javascript: return onlyNumbers(this,event);"> </div></div></div></div></div><div class="clear_purple">&nbsp;</div>            
+            <br/>
+            <div class="bg_purple"><div class="bl_purple"><div class="br_purple"><div class="tl_purple"><div class="tr_purple"><span class="titulo2">Prueba negativa enfermos</span><input type="text" id="var3" name="var3" onkeypress="javascript: return onlyNumbers(this,event);"> </div></div></div></div></div><div class="clear_purple">&nbsp;</div>
+            <br/>
+            <div class="bg_purple"><div class="bl_purple"><div class="br_purple"><div class="tl_purple"><div class="tr_purple"><span class="titulo2">Prueba negativa no-enfermos</span><input type="text" id="var4" name="var4" onkeypress="javascript: return onlyNumbers(this,event);"> </div></div></div></div></div><div class="clear_purple">&nbsp;</div>
+            <br/>
+            <div class="titulo">2. Aplicaci&oacute;n sobre otras poblaciones (uso cl&iacute;nico)</div>
+            <br/>
+            <div class="bg_purple"><div class="bl_purple"><div class="br_purple"><div class="tl_purple"><div class="tr_purple"><span class="titulo2">Prevalencia (proporci&oacute;n) estimada de la enfermedad en la poblaci&oacute;n (introducir estimaci&oacute;n)</span><input type="text" id="var5" name="var5" onkeypress="javascript: return onlyNumbers(this,event);"> </div></div></div></div></div><div class="clear_purple">&nbsp;</div>
+        </div>  
+        
+        <div id="inputvariables"></div>  
+        <br />
+        <div id="resultado"></div>
+        
+        <div id="epi3_resultado" style="visibility:hidden;"><!-- Sólo para formula epi3 -->
+            <div class="titulo">1. C&aacute;lculos sobre la muestra del estudio</div>
+            <div class="t_white"><div class="b_white"><div class="l_white"><div class="r_white"><div class="bl_white"><div class="br_white"><div class="tl_white"><div class="tr_white">
+                <span class="titulo4">Proporción (prevalencia) de la enfermedad en la población del estudio:&nbsp;</span><span class="titulo5" id="r1" name="r1">0,33</span>
+                <br/>
+                <span class="titulo4">Sensibilidad (S):&nbsp;</span><span class="titulo5" id="r2" name="r2">0,43</span>
+                <br/>
+                <span class="titulo4">Especificidad (E):&nbsp;</span><span class="titulo5" id="r3" name="r3">0,78</span>
+                <br/>
+                <span class="titulo4">Valor predictivo positivo (VP+):&nbsp;</span><span class="titulo5" id="r4" name="r4">0,13</span>
+                <br/>
+                <span class="titulo4">Valor predictivo negativo (VP-):&nbsp;</span><span class="titulo5" id="r5" name="r5">4,77</span>
+                <br/>
+                <span class="titulo4">Cociente de probabilidad de un resultado positivo (CP+):&nbsp;</span><span class="titulo5" id="r6" name="r6">0,22</span>
+                <br/>
+                <span class="titulo4">Cociente de probabilidad de un resultado negativo (CP-):&nbsp;</span><span class="titulo5" id="r7" name="r7">0,10</span>
+                <br/>
+            </div></div></div></div></div></div></div></div>
+            <div class="titulo">2. Aplicaci&oacute;n sobre otras poblaciones (uso cl&iacute;nico)</div>
+            <div class="t_white"><div class="b_white"><div class="l_white"><div class="r_white"><div class="bl_white"><div class="br_white"><div class="tl_white"><div class="tr_white">
+                <span class="titulo4">Odds pre-prueba:&nbsp;</span><span class="titulo5" id="r8" name="r8">0,43</span>
+                <br/>
+                <span class="titulo4">Odds post-prueba para un resultado positivo:&nbsp;</span><span class="titulo5" id="r9" name="r9">0,78</span>
+                <br/>
+                <span class="titulo4">Odds post-prueba para un resultado negativo:&nbsp;</span><span class="titulo5" id="r10" name="r10">0,13</span>
+                <br/>
+                <span class="titulo4">Probabilidad post-prueba para un resultado positivo:&nbsp;</span><span class="titulo5" id="r11" name="r11">4,77</span>
+                <br/>
+                <span class="titulo4">Probabilidad post-prueba para un resultado negativo:&nbsp;</span><span class="titulo5" id="r12" name="r12">0,22</span>
+                <br/>
+            </div></div></div></div></div></div></div></div>
+        </div>
+    </div>
+
+	<div id="leftMenu">
+		<!-- START OF MENU -->
+		<div id="dhtmlgoodies_slidedown_menu">
+			
+		</div>
+	</div>	
+	
+    <div id="referencia">
+    </div>
+</div>
+<script type="text/javascript">
+    populateFormulas();
+    initSlideDownMenu();
+</script>
+</form>
+</body>
+</html>

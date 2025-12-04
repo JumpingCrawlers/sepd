@@ -1,0 +1,885 @@
+.main__wrapper{
+    display: grid;
+    grid-template-columns: auto minmax(auto,1131px) auto;
+}
+
+.content__wrapper{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.title__wrapper{
+    border-bottom: 1px solid #01447B;
+}
+
+.main__title{
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #01447B;
+    margin-bottom: 1rem;
+}
+
+.main__text{
+    margin-top: 1rem;
+}
+
+.fz-1 {
+    font-size: 1em;
+}
+
+.fz-1-1 {
+    font-size: 1.1em;
+}
+
+.h2, h2 {
+    font-size: 1.1rem;
+}
+
+.azul{
+    color: #01447B;
+}
+.azul_claro{
+    color: #0471cc;
+}
+
+.main__text_alt{
+    margin-top: 2rem;
+    font-size: 1.25rem
+}
+
+.competencias__wrapper{
+    padding: 0 15px 0 24px;
+}
+
+.boton_competencia button{
+    max-width: 91px;
+}
+
+.lista_competencias__wrapper{
+    padding: 0 15px 0 15px;
+    margin-bottom: 20px;
+}
+
+.lista_competencias__panel, .agregar__conocimientos_panel, .lista_competencias__transversales__panel, .dominio__wrapper{
+    padding: 5px 20px;
+    background-color: #01447B;
+    border: 3px solid #01447B;
+    /*height: 104px;*/
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    cursor: pointer;
+    width: 100%;
+}
+
+.wrapper_botton>.lista_competencias__panel{
+    background-color: #0083ff;
+    border: 2px solid #0083ff;
+}
+
+.lista_competencias__panel, .dominio__wrapper{
+    border-radius: 0.25rem;
+}
+
+.selecciona__competencia{
+    font-size: 14px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    outline:none;
+    text-align: start;
+    cursor:pointer;
+    min-width: 20px;
+    color: #fff;
+}
+
+.lista_competencias__panel:hover, .dominio__wrapper:hover{
+   border-color: #0063b5;
+}
+
+.arrow{
+    border: 1px solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
+   border-color: #fff;
+}
+
+
+.competencias__validar, .conocimientos__validar, .competencias__validar_screen, .listas_competencias{
+    padding: 30px 60px 30px 30px;
+    border: 1px solid rgb(230, 229, 229);
+    border-top: 0px;
+    border-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.competencias__validar_screen{
+    padding: 10px 20px 0px 20px;
+    border: 0px;
+}
+
+.conocimientos__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.certificados__wrapper{
+    margin-bottom: 20px;
+}
+
+.certificados__input::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 0;
+}
+
+.certificados__input {
+    content: 'Seleccionar archivo';
+    width: 89%;
+    display: inline-block;
+    border: 1px solid rgb(204, 208, 210);;
+    padding: 5px 0px 5px 8px;
+    outline: none;
+    cursor: pointer;
+    text-shadow: 1px 1px rgb(73, 80, 87);
+    font-size: 1rem;
+    border-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.width100{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.buscar{
+    border: 1px solid #01447B;
+    color: white;
+    padding: 5px;
+    border-left: 0;
+    height: 43px;
+    margin-left: -5px;
+    background: #01447B;
+    border-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.descargar{
+    background:  #01447B;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-color: #01447B;
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    margin-bottom: 8px;
+    margin-right: 20px;
+}
+
+.titulo__wrapper{
+    margin-bottom: 20px;
+}
+
+.titulo__input{
+    display: block;
+    width: 100%;
+    border: 1px solid rgb(204, 208, 210);;
+    padding: 5px;
+    height: 43px;
+    border-radius: 3px;
+}
+
+.fecha__wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.fecha__wrapper>div{
+    flex-grow: 2;
+}
+
+.fecha{
+    border: 1px solid rgb(204, 208, 210);;
+    padding: 5px;
+    height: 43px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.fecha__box{
+    margin-left: 4.6%;
+}
+
+.fecha::placeholder {
+    color: black;
+  }
+
+.valor__wrapper{
+    margin-bottom: 20px;
+}
+
+.valor__creditos, .valor__tipo{
+    display: inline-block;
+    width: 47.5%;
+    border: 1px solid rgb(204, 208, 210);;
+    padding: 5px;
+    height: 43px;
+    border-radius: 3px;
+}
+
+.valor__tipo{
+    margin-left: 4.6%;
+}
+
+.agregar__conocimientos_panel{
+    height: 61px;
+    cursor: pointer;
+}
+
+.agregar__conocimientos{
+    background:  #01447B;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-color: #01447B;
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    margin-bottom: 8px;
+}
+
+.conocimientos__validar, .competencias__validar, .listas_competencias{
+    padding: 0px 60px 0px 30px;
+    transition: 0.5s ease-in-out;
+    transform:translateY(0);
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 0;
+}
+
+.no__border{
+    border-color: transparent;
+}
+
+.descripcion__box
+{
+  border: 1px solid transparent
+}
+
+.display{
+    padding: 30px;
+    border: 1px solid #01447B;
+    transform:translateY(1);
+    transition: 0.5s ease-in-out;
+    margin-bottom: 20px;
+    max-height: 2000px;
+    border-top: 0;
+}
+
+
+.display__alt{
+    padding: 30px 60px 30px 30px;
+    transform:translateY(1);
+    transition: 0.5s ease-out;
+    margin-bottom: 20px;
+    max-height: 600px;
+    margin-bottom: 20px;
+    border: 1px solid #01447B;
+    border-top: 0;
+}
+
+
+.competencia__guardar{
+    background:  rgb(219, 129, 46);
+    color: white;
+    padding: 6px 22px;
+    font-size: 14px;
+    border-color: rgb(219, 129, 46);
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.competencia__guardar__enviado{
+    background:  #01447B;
+    color: white;
+    padding: 6px 20px;
+    font-size: 14px;
+    border-color: #01447B;
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.competencia__guardar__aprovado{
+    background:  #5aac44;
+    color: white;
+    padding: 6px 15px;
+    font-size: 14px;
+    border-color: #5aac44;
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.competencia__guardar__rechazado{
+    background:  #ff0000;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-color: #ff0000;
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.competencia__guardar__alt{
+    background:  #5aac44;
+    color: white;
+    padding: 6px 22px;
+    font-size: 14px;
+    border-color: #5aac44;
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    height: inherit;
+    margin-left: 8px;
+}
+
+.flex__endflex{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.competencia__guardar__eliminar{
+    background:  red;
+    color: white;
+    padding: 6px 22px;
+    font-size: 14px;
+    border-color:  red;
+    border-radius: 3px; 
+    cursor: pointer;
+    border: none;
+    height: inherit;
+    margin-left: 8px;
+}
+
+.left{
+    float: left;
+    margin-bottom: 10px;
+}
+
+.right{
+    float: right;
+    margin-bottom: 10px;
+}
+
+*:focus {
+    outline:none !important;
+}
+
+.file{
+    position: relative;
+    height: auto;
+}
+
+
+.wrapper_botton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px; 
+}
+
+.wrapper_botton_icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px; 
+    align-items: center;
+}
+
+.wrapper_botton__alt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px; 
+
+}
+
+.wrapper_agregar_conocimiento{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.wrapper_icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.wrapper_icon>.agregar__conocimientos_panel{
+    height: 34px;
+    line-height: 30px;
+    border-radius: 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.agregar__conocimientos__alt{
+    float: right;
+    background:  #5aac44;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-color: #5aac44;
+    border-radius: 3px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.post__aux{
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+.conocimientos__box{
+    border: 1px solid #01447B;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 0.5rem;
+    height: auto;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: white;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: white;
+  }
+
+  .wrapper_botton__screen{
+      width: 100px;
+      height: 50px;
+      margin-bottom: 10px;
+  }
+
+  .wrapper_botton__screen > .lista_competencias__panel{
+    width: auto;
+    height: 50px;
+    background:  #01447B;
+    color: white;
+  }
+
+  .trash__icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #ff2525;
+    color: #fff;
+    align-items: center;
+    border-radius: 0.25rem;
+    padding: 0px 10px;
+    height: 34px;
+    margin-left: 5px;
+    cursor: pointer;
+    border : 0;
+  }
+
+  .trash__icon__file{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #ff2525;
+    color: #fff;
+    align-items: center;
+    border-radius: 0.25rem;
+    padding: 0px 10px;
+    height: 34px;
+    margin-left: 5px;
+    cursor: pointer;
+    border : 0;
+    margin-bottom: 1rem;
+  }
+
+  .trash__icon__file.dark-gray, .trash__icon.dark-gray {
+      cursor: auto;
+      background: #646464 !important;
+  }
+
+  .trash__icon__file.yellow, .trash__icon.yellow{
+      background: #ff8f25; 
+  }
+
+  a.trash__icon__file:hover, a.trash__icon:hover {
+      text-decoration: none;
+      color: #fff;
+  }
+
+  .circle-small {
+    font-size: 0.5em;
+    vertical-align: middle;
+  }
+
+  .circle-small.red {
+    color: #ff2525;
+  }
+
+  .circle-small.green {
+    color: #5aac44;
+  }
+
+  #upload-info {
+    color: #646464;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  .fz-2 {
+    font-size: 2em;
+  }
+
+  .save-buttons {
+    position: sticky;
+    z-index: 999;
+    bottom: 0;
+    padding: 20px 60px;
+  }
+
+  .btn.btn-red {
+    background-color: #ff2525;
+    color: #fff;
+  }
+
+  .btn.btn-gray {
+      background-color: #585858;
+      color: #ffffff;
+  }
+
+  .btn.btn-green {
+    background-color: #5aac44;
+    color: #fff;
+  }
+
+  .btn.btn-orange {
+    background-color: #ff8f25;
+    color: #fff;
+  }
+  
+  .btn.btn-darkblue, .darkblue {
+    background-color: #01447B;
+    color: #fff;
+}
+
+  .custom-file-label:after {
+      content: "Seleccionar archivo";
+  }
+
+  .save-buttons a:hover {
+      text-decoration: none;
+  }
+  
+  .btn.btn-red:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 37, 37, 0.25);
+  }
+
+  .btn.btn-green:focus {
+    box-shadow: 0 0 0 0.2rem rgba(90, 172, 68, 0.25);
+  }
+
+  .btn.btn-orange:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 143, 37, 0.25);
+  }
+
+  .btn.btn-gray:focus {
+    box-shadow: 0 0 0 0.2rem rgba(88, 88, 88, 0.25);
+  }
+
+  .btn.btn-darkblue:focus {
+    box-shadow: 0 0 0 0.2rem rgba(1, 68, 123, 0.25);
+}
+
+.modal-header {
+    background-color: #4e25cc;
+    color: #fff;
+    border-radius: 0 !important;
+}
+
+.modal-header button span {
+    color: #fff;
+}
+
+.fz-17 {
+    font-size: 17pt;
+}
+
+.white {
+    background: #fff !important;
+    color: #000;
+}
+
+.cursor-normal {
+    cursor: auto !important;
+}
+
+.justify-left {
+    justify-content: left;
+}
+
+  .validado{
+    background:  rgb(60,179,113)
+  }
+
+    .conocimientos__titulo{
+    color: #fff;
+    }
+
+ .dominio__wrapper, .wrapper_botton {
+    margin-top: 10px;
+    height: auto;
+ }
+    
+.lista__evaluacion
+{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.conocimientos__item, .main__text , .habilidades__item, .Aptitudes__item, .meritos__item{
+    margin: 5px 0 10px 0;
+    padding-left: 10px
+}
+
+.conocimientos__item{
+    font-size: 1em;
+}
+
+.conocimientos__puntos, .habilidades__puntos, .Aptitudes__puntos, .meritos__puntos{
+    margin-left: 20px;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.subtitle__alt{
+    color: #01447B;
+}
+
+.puntos__wrapper{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+.show_file__wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.show_file__text
+{
+    margin: 0;
+}
+
+.numero_omc__wrapper{
+    display: flex;
+    flex-direction: row;
+
+}
+
+    /* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red transparent transparent transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s
+  }
+  
+  /* Form validation VPCR */
+    .invalid-input{
+        border-color: #843534;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #ce8483;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #ce8483;
+    }
+    .custom-file-label, .custom-file-label:after {
+        line-height: 1.8 !important;
+    }
+    .fecha__box{
+        position: relative;
+    }
+    .fecha__box .error_message{
+        position: absolute;
+        left: 0;
+        bottom: -22px;
+        color: #843534;
+        font-size: 12px;
+    }
+    /* Inputs placeholders */
+    ::placeholder,
+    input[type=date] { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #212529 !important;
+        opacity: 0.8 !important; /* Firefox */
+    }
+
+    :-ms-input-placeholder,
+    input[type=date] { /* Internet Explorer 10-11 */
+        color: #212529 !important;
+    }
+
+    ::-ms-input-placeholder,
+    input[type=date]{ /* Microsoft Edge */
+        color: #212529 !important;
+    }
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+    @media (max-width: 912px) {
+    .certificados__input{
+        width: 80%;
+    }
+    .fecha{
+        width: 99%;
+    }
+    }
+
+    @media (max-width: 680px) {
+    .certificados__input{
+        width: 70%;
+    }
+    .lista_competencias__panel, .agregar__conocimientos_panel, .lista_competencias__transversales__panel, .trash__icon, .dominio__wrapper{
+        height: auto;
+    }
+    }
+
+    @media (max-width: 450px) {
+    .main__wrapper{
+        display: grid;
+        grid-template-columns: 0 auto 0;
+    }
+
+    .content__wrapper{
+        width: 100vw;
+    }
+
+    .fecha__wrapper{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .fecha{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .conocimientos__validar{
+        padding: 10px;
+    }
+
+    .certificados__input{
+        width: 60%;
+        color: transparent;
+    }
+
+    }
+
+    @media (max-width: 334px) {
+        .certificados__input{
+            width: 50%;
+        }
+    }         
+.sombra-boton {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+.dominio__wrapper, .competencia__guardar, .lista_competencias__panel {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+.competencia__guardar__enviado {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}

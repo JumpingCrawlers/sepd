@@ -1,0 +1,84 @@
+
+// Body
+$body-bg: #fff;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border-color: $laravel-border-color;
+
+$card-border-color: $laravel-border-color;
+
+// Brands
+$primary: #3097D1;
+$info: #8eb4cb;
+$success: #2ab27b;
+$warning: #cbb956;
+$danger: #bf5329;
+$light: #e6e6e6;
+
+
+// Typography
+$font-family-sans-serif: "Fira Sans", sans-serif;
+$font-size-base: .875rem; // 14px
+$line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Inputs
+$input-border-color: lighten($text-color, 40%);
+$input-placeholder-color: lighten($text-color, 30%);
+
+////////////////////////////////////////////
+// Extras para SEPD
+////////////////////////////////////////////
+
+// COLORES
+// -- SECCIONES
+$color-institucional: #702d8c;
+$color-institucional-secundario: #b60000;
+$color-formacion: #2c4f8a;
+$color-formacion-secundario: #4780df;
+$color-cid: #8e2d52;
+$color-cid-secundario: #df1965;
+$color-congreso: #d39a14;
+$color-congreso-secundario: #f7cc79;
+$color-publicaciones: #2e8661;
+$color-publicaciones-secundario: #20b55f;
+$color-prensa: #2e8661;
+$color-prensa-secundario: #20b55f;
+$color-gris-fondo: #CCC;
+$color-contacto: #702d8c;
+// -- PROYECTOS: FASES
+$color-diseno: #d6c62d;
+$color-reclutamiento: #ff871d;
+$color-analisis: $color-cid-secundario;
+$color-difusion: $color-cid;
+// -- OTROS COLORES
+$color-twitter: #1b95e0;
+$color-evento-externo: $color-gris-fondo;
+
+
+// CAROUSEL
+$carousel-ratio: 21.05%; // (1140x240)
+$carousel-A-ratio: 26.31%; // (1140x300)
+$carousel-2x1-ratio: 32%; // (750x240)
+$carousel-2x1A-ratio: 40%; // (750x300)
+$carousel-3x1-ratio: 35.41%; // (847x300)
+$margen-texto-diapo-izquierda: 12%;
+$margen-texto-diapo-derecha: 48%;
+$espacio-texto-diapos: 30%;
+
+// IMAGEN-SLIDER
+$imagen-slider-ratio: $carousel-ratio; // (1140x240)
+$imagen-slider-2x1-ratio: 66.667%; // (360x240)
+$imagen-slider-2x1A-ratio: 83.33%; // (360x300)
+$imagen-slider-3x1-ratio: 114.06%; // (263x300)
+
+// PASTILLAS
+$pastilla-3-ratio: 65.27%; // (360x235)
+$pastilla-3-doble-ratio: 137.70%; // (360x495)
+$pastilla-ratio: 54.05%; // (555x300)
+$pastilla-doble-ratio: 111.71%; // (555x620)
+
+// BORDER-RADIUS
+$borde-radio: 0.7rem;
+$borde-radio-peque: 0.4rem;

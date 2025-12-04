@@ -1,0 +1,26 @@
+// Variables
+@import "variables";
+
+////////////////////////////////////////////////////////////////////////
+// CSS de elementos específicos de la galería
+////////////////////////////////////////////////////////////////////////
+
+.img-carpeta {
+    width: 3.3em;
+}
+
+img.img-fluid.embed-responsive-item {
+    height: 95%;
+}
+
+.foto img {
+    width: auto !important;
+}
+
+div#lightbox {
+    top: 15% !important;
+}
+
+.lightbox {
+    position: fixed;
+}
