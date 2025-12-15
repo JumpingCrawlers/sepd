@@ -51,7 +51,7 @@
         {{-- sección donde se muestran las empleos --}}
         <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12 pl-4">
             <div class="container" id="contenidoVue">
-                <empleo-index ref="EmpleoIndex" seccion='{{ $seccion }}' url-web-antigua='{{ setting('site.url_web_antigua') }}' iconos='{{ $iconos }}' >                    
+                <empleo-index ref="EmpleoIndex" seccion='{{ $seccion }}' url-web-antigua='{{ setting('site.url_web_antigua') }}' iconos='{{ $iconos }}' >
                 </empleo-index>
             </div>
         </div>

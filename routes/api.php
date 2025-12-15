@@ -30,7 +30,8 @@ Route::get('sepdtv', 'SepdtvController@listaSepdtv');
 Route::get('galeria', 'GaleriaController@listaGaleria');
 Route::get('carpeta_galeria', 'GaleriaController@getNombreCarpeta');
 Route::get('biblioteca', 'BibliotecaController@listaBiblioteca');
-Route::get('empleos', 'EmpleoController@listaEmpleo');
+Route::middleware(['web'])->get('empleos', 'EmpleoController@listaEmpleo');
+//Route::get('empleos', 'EmpleoController@listaEmpleo');
 Route::get('podcast-feads', 'PodcastFeadController@listaPodcastFeads');
 // suma una reproducción de un vídeo
 Route::post('reproduccion/{video}', 'SepdtvController@sumaReproduccion');
