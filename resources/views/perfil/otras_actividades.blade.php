@@ -114,9 +114,11 @@
                                                 {{ date('m/Y', strtotime($data['fecha'])) }}
                                             </td-->
                                             <td style="width: 0; white-space: nowrap;">
-                                                <a class="btn btn-secondary btn-sm" href="{{ route('certificados.descargar', ['id' => $data['id']]) }}" target="__blank" download>
-                                                    <i class="fas fa-download"></i>
-                                                </a>
+                                                @if (!empty($data['id']))
+                                                    <a class="btn btn-secondary btn-sm" href="{{ route('certificados.descargar', ['id' => $data['id']]) }}" target="__blank" download>
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                @endif
                                             </td>
                                         </tr>
                                         @endforeach

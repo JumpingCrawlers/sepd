@@ -123,38 +123,38 @@ class PerfilController extends Controller
         foreach($certificados as $certificado){
             $data = DB::table('certificados_corporativos_datos')->where("id",$certificado->datos_id)->first();
 
-            
+            if (!in_array($certificado->modelo, [1, 2, 3, 4], true)) {
+                continue;
+            }
+
+            $id = $certificado->id;
+
             switch ($certificado->modelo) {
 
                 
                 case 1:
                     $nombre_certificado = "Certificado ".$data->tipo_colaboracion. " - ".$data->nombre_curso;
                     $fecha = $certificado->created_at;
-                    $id = $certificado->id;
 
                     break;
                 case 2:
                     $nombre_certificado = "Certificado Evaluador - ".$data->nombre_congreso;
                     $fecha = $certificado->created_at;
-                    $id = $certificado->id;
 
                     break;
                 case 3:
                     $nombre_certificado = "Certificado Hands-on - ".$data->nombre_congreso;
                     $fecha = $certificado->created_at;
-                    $id = $certificado->id;
 
                     break;
                 case 4:
                     $nombre_certificado = "Certificado Autor - ".$data->isbn;
                     $fecha = $certificado->created_at;
-                    $id = $certificado->id;
 
                     break;        
                 default:
                     $nombre_certificado = 'No encontrado.';
                     $fecha = $certificado->created_at;
-                    $id = '';
                     break;
             }
 
