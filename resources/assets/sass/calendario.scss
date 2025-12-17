@@ -1,0 +1,92 @@
+// Variables
+@import "variables";
+
+// colores de los eventos
+.evento-institucional {
+    background-color: $color-institucional !important;
+    border-color: $color-institucional !important;
+}
+.evento-formacion {
+    background-color: $color-formacion !important;
+    border-color: $color-formacion !important;
+}
+.evento-cid {
+    background-color: $color-cid !important;
+    border-color: $color-cid !important;
+}
+.evento-congreso {
+    background-color: $color-congreso !important;
+    border-color: $color-congreso !important;
+}
+.evento-publicaciones {
+    background-color: $color-publicaciones !important;
+    border-color: $color-publicaciones !important;
+}
+.evento-prensa {
+    background-color: $color-prensa !important;
+    border-color: $color-prensa !important;
+}
+.evento-externo {
+    background-color: $color-evento-externo !important;
+    border-color: $color-evento-externo !important;
+}
+.evento-global {
+    background-color: $color-gris-fondo !important;
+    border-color: $color-gris-fondo !important;
+}
+
+/* CALENDARIO */
+#listaCalendario a:hover{
+    text-decoration: underline;
+}
+#listaCalendario img{
+    width: 100%;
+}
+
+.pastilla .fc-toolbar h2 {
+    font-weight: bold;
+    font-size: 0.96rem;
+}
+.pastilla .fc-toolbar .fc-center{
+    float: left;
+}    
+
+.pastilla .fc-toolbar button{
+    display: none;    
+}
+
+.pastilla .fc-toolbar.fc-header-toolbar{
+    margin-bottom: 0;
+}
+
+.pastilla .fc-basic-view .fc-day-number, .fc-basic-view .fc-week-number{
+    padding: 0;
+    margin: 0;
+}
+
+.pastilla .fc-basic-view .fc-body .fc-row { 
+    min-height: auto;
+    height: 2.50rem !important;
+}
+
+.pastilla .fc button, .pastilla .fc table, body .fc {
+    font-size: 0.8rem;
+}
+
+.pastilla .fc-day-header span{
+    display: none;
+    /*font-size: 0.80rem;*/
+}
+
+.pastilla .fc-event-container span{
+   display: inherit;
+    margin: 0;
+    padding: 0.5px 0;
+    font-size: 0rem;
+    width: 100%;
+}
+
+.pastilla .fc-event{
+    font-size: 0.74rem;
+}
+

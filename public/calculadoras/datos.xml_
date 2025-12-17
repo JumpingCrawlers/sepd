@@ -1,0 +1,3842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<formulas>
+  <formula id="gas1" tipo="gastro">
+    <titulo>Indice de Blatchford</titulo>
+    <descripcion>
+      <![CDATA[Índice clínico útil para la identificación de pacientes subsidiarios o no de tratamiento específico (endoscopia ó transfusión) en hemorragia digestiva alta basándose en criterios clínicos y analíticos.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[A risk store to predict need for treatment for upper-gastrointestinal haemorrhage. Blatchford O. Lancet. 2000 Oct 14;356(9238):1318-21]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Hemoglobina" unidad="g/dL"></variable>
+      <variable id="2" nombre="Presión Sistólica" unidad="mmHg"></variable>
+      <variable id="3" nombre="Urea" unidad="mmol/l"></variable>
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="Sexo" tipo="radio">
+        <opciones>
+          <opcion nombre="Hombre" valor="H"></opcion>
+          <opcion nombre="Mujer" valor="M"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Frecuencia Cardiaca > 100 lpm" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Melenas" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Síncope" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="2"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Hepatopatía" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="2"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="6" nombre="Fallo cardíaco" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="2"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="3" tipo="cond">
+            <rangos>
+              <rango fin="6.5" valor="0"></rango>
+              <rango ini="6.5" fin="8" valor="2"></rango>
+              <rango ini="8" fin="10" valor="3"></rango>
+              <rango ini="10" fin="25" valor="4"></rango>
+              <rango ini="25" valor="6"></rango>
+            </rangos>
+          </variable>
+          <variable id="1" tipo="cond">
+            <condiciones>
+              <condicion id="1" valor="H"></condicion>
+            </condiciones>
+            <rangos>
+              <rango fin="100" valor="6"></rango>
+              <rango ini="100" fin="120.001" valor="3"></rango>
+              <rango ini="120" fin="130.001" valor="1"></rango>
+              <rango ini="130" valor="0"></rango>
+            </rangos>
+          </variable>
+          <variable id="1" tipo="cond">
+            <condiciones>
+              <condicion id="1" valor="M"></condicion>
+            </condiciones>
+            <rangos>
+              <rango fin="100" valor="6"></rango>
+              <rango ini="100" fin="120.001" valor="3"></rango>
+              <rango ini="120" valor="0"></rango>
+            </rangos>
+          </variable>
+          <variable id="2" tipo="cond">
+            <rangos>
+              <rango fin="90.0001" valor="3"></rango>
+              <rango ini="90" fin="100" valor="2"></rango>
+              <rango ini="100" fin="110" valor="1"></rango>
+              <rango ini="110" valor="0"></rango>
+            </rangos>
+          </variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+          <variable id="6" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="6">No hay necesidad de intervención</rango>
+          <rango ini="6">Necesidad de intervención en más del 50% de los casos para el manejo óptimo de la hemorragia digestiva.</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas2" tipo="gastro">
+    <titulo>Índice de Rockall</titulo>
+    <descripcion>
+      <![CDATA[Criterio de estratificación de gravedad clínica en hemorragia digestiva alta.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Risk assessment after acute upper gastrointestinal haemorrhage. Rockall TA. Gut. 1996 Mar;38(3):316-21]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Edad" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Menor a 60" valor="0"></opcion>
+          <opcion nombre="60 a 79" valor="1"></opcion>
+          <opcion nombre="80 o más" valor="2"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Shock" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Si FC menor a 100 lpm y TAS mayor a 100 mmHG (sin shock)" valor="0"></opcion>
+          <opcion nombre="Si FC mayor a 100 lpm y TAS mayor a 100 mmHG (taquicardia)" valor="1"></opcion>
+          <opcion nombre="Si TAS menor a 100 mmHG (hipotensión)" valor="2"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Comorbilidad" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Cardiopatía isquémica, insuficiencia cardiaca u otros fracasos orgánicos salvo los renales o hepáticos" valor="2"></opcion>
+          <opcion nombre="Fallo renal, enfermedad maligna diseminada o insuficiencia hepática" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Datos de hemorragia activa" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Sangre roja en sonda nasogástrica ó coágulo rojo adherido ó vaso visible en la endoscopia" valor="2"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Diagnóstico de la hemorragia" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Mallory-Weiss o sin lesiones en la endoscopia o estigmas de sangrado" valor="0"></opcion>
+          <opcion nombre="Otros diagnósticos" valor="1"></opcion>
+          <opcion nombre="Malignidad de tracto digestivo superior" valor="2"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="2.01">Riesgo bajo</rango>
+          <rango ini="3" fin="4.01">Riesgo medio</rango>
+          <rango ini="5">Riesgo alto</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas3" tipo="gastro">
+    <titulo>Clasificación de Ranson</titulo>
+    <descripcion>
+      <![CDATA[Clasificación clínico-analítica que estratifica la gravedad de los pacientes con pancreatitis aguda según su pronóstico.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Acute pancreatitis—where are we? Ranson JH. Surg Clin North Am. 1981 Feb;61(1):55-70]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Edad mayor a 55 años" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Hemoglobina mayor a 16 g/L" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Glucemia mayor a 200 mg/dL " tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="LDH mayor a 350 UI/L" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="GOT mayor a 250 UI/L" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="6" nombre="Descenso del hematocrito mayor a 10%" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="7" nombre="Incremento de la urea mayor a 11 mg/dL o BUN menor a 5 mg/dL" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="8" nombre="Calcio sérico menor a 8 mg/dL" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="9" nombre="PaO2 menor a 60 mmHg" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="10" nombre="Déficit de bases mayor a 4 mEq/L " tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="11" nombre="Necesidades de líquidos mayor a 6 litros" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+          <variable id="6" tipo="opcion"></variable>
+          <variable id="7" tipo="opcion"></variable>
+          <variable id="8" tipo="opcion"></variable>
+          <variable id="9" tipo="opcion"></variable>
+          <variable id="10" tipo="opcion"></variable>
+          <variable id="11" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="2.01">Mortalidad estimada 1%</rango>
+          <rango ini="3" fin="4.01">Mortalidad estimada 16%</rango>
+          <rango ini="5" fin="6.01">Mortalidad estimada 40%</rango>
+          <rango ini="7" fin="8.01">Mortalidad estimada 100%</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas4" tipo="gastro">
+    <titulo>Clasificación endoscópica de Forrest</titulo>
+    <descripcion>
+      <![CDATA[Escala endoscópica de lesiones pépticas de tracto digestivo superior que establece el potencial riesgo de recidiva hemorrágica en función de las lesiones y la necesidad de tratamiento endoscópico de las mismas.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Endoscopy en gastrointestinal bleeding. Forrest JA et al. Lancet 1974; 17:394-7]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Hallazgos endoscópicos" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Sangrado en jet" valor="55"></opcion>
+          <opcion nombre="Sangrado babeante" valor="50"></opcion>
+          <opcion nombre="Vaso visible no babeante" valor="43"></opcion>
+          <opcion nombre="Coágulo rojo" valor="22"></opcion>
+          <opcion nombre="Coagulo negro embebido" valor="7"></opcion>
+          <opcion nombre="Fondo fibrinoso" valor="2"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[%]]>
+        </unidad>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+        </variables>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango ini="55" fin="55.1">Ia</rango>
+          <rango ini="50" fin="50.1">Ib</rango>
+          <rango ini="43" fin="43.1">IIa</rango>
+          <rango ini="22" fin="22.1">IIb</rango>
+          <rango ini="7" fin="7.1">IIc No se establece necesidad de tratamiento</rango>
+          <rango ini="2" fin="2.1">III No se establece necesidad de tratamiento</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas5" tipo="gastro">
+    <titulo>Clasificación de Zargar</titulo>
+    <descripcion>
+      <![CDATA[Escala endoscópica de lesiones por cáusticos. Esta clasificación ha sido empleada para definir el manejo más adecuado de los pacientes tras la endoscopia precoz.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[The role of fiberoptic endoscopy in the management of corrosive ingestion and modified endoscopic classification of burns. Zargar SA et al. Gastrointest Endosc 1991;37:165-9]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Hallazgos endoscópicos" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Normal" valor="0"></opcion>
+          <opcion nombre="Edema e hiperemia de la mucosa" valor="1"></opcion>
+          <opcion nombre="mucosaÚlceras superficiales, erosiones friabilidad, ampollas, membranas blanquecinas, exudados y hemorragias" valor="2"></opcion>
+          <opcion nombre="Úlceras profundas aisladas o úlceras circunferenciales" valor="3"></opcion>
+          <opcion nombre="Úlceras profundas múltiples o áreas localizadas de necrosis" valor="4"></opcion>
+          <opcion nombre="Áreas extensas de necrosis" valor="5"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+        </variables>
+      </calculo>
+    </calculos>
+    <resultados visible="false">
+      <resultado>
+        <rangos>
+          <rango ini="0" fin="0.1">0</rango>
+          <rango ini="1" fin="1.1">I</rango>
+          <rango ini="2" fin="2.1">IIa</rango>
+          <rango ini="3" fin="3.1">IIb</rango>
+          <rango ini="4" fin="4.1">IIIa</rango>
+          <rango ini="5" fin="5.1">IIIb</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas6" tipo="gastro">
+    <titulo>Clasificación de Rosemont</titulo>
+    <descripcion>
+      <![CDATA[Clasificación endosonográfica útil para el diagnóstico por imagen de pancreatitis crónica basado en criterios mayores y menores parenquimatosos y ductales. Buena correlación histológica. Basado en conferencias de consenso de expertos.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[EUS-based criteria for the diagnosis of chromic pancreatitis: the Rosemont classification. Catalano et al. Gastrointest Endosc. 2009. Jun;69(7): 1251-61]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Focos hiperecogénicos ≥ 2 mm con sombra posterior" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="10"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Focos hiperecogénicos ≥ 2 mm de longitud sin sombra posterior" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Entramado: aparición de al menos dos lineas hiperecogénicas ≥ 3 mm de longitud en el mismo plano de corte ultrasonográfico" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Quistes" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Panal de abejas: estructuras bien definidas mayores de 5 mm con periferia hiperecogénica y centro hipoecoico en más de 3 lobulillos adyacentes" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="S"></opcion>
+          <opcion nombre="No" valor="N"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="6" nombre="Lobularidad sin panal de abejas: estructuras idénticas de las anteriores sin estar en lóbulos contiguos" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="7" nombre="Cálculos en el ducto pancreático principal: imágenes hiperecogénicas con sombra posterior" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="10"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="8" nombre="Dilatación del ducto pancreático principal ≥3,5 mm en cuerpo y ≥1,5 mm en cola" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="9" nombre="Trayectoria irregular del ducto pancreático principal" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="10" nombre="Hiperecogenicidad marcada de la paredes del ducto pancreático principal" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="11" nombre="Ramas secundarias dilatadas: 3 o más estructuras tubulares anecoicas conectadas con el ducto principal mayores de 1 mm de grosor" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="6" tipo="opcion"></variable>
+          <variable id="7" tipo="opcion"></variable>
+          <variable id="8" tipo="opcion"></variable>
+          <variable id="9" tipo="opcion"></variable>
+          <variable id="10" tipo="opcion"></variable>
+          <variable id="11" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados visible="false">
+      <resultado>
+        <condiciones>
+          <condicion id="5" valor="S"></condicion>
+        </condiciones>
+        <rangos>
+          <rango ini="1" fin="3">Normal</rango>
+          <rango ini="4" fin="5">Indeterminada</rango>
+          <rango fin="1">Indeterminada</rango>
+          <rango ini="14" fin="19">Sugestiva</rango>
+          <rango ini="3" fin="4">Sugestiva</rango>
+          <rango ini="5" fin="9">Sugestiva</rango>
+          <rango ini="10" fin="19">Diagnóstica</rango>
+          <rango ini="20" fin="29">Diagnóstica</rango>
+        </rangos>
+      </resultado>
+      <resultado>
+        <condiciones>
+          <condicion id="5" valor="N"></condicion>
+        </condiciones>
+        <rangos>
+          <rango fin="3">Normal</rango>
+          <rango ini="3" fin="5">Indeterminada</rango>
+          <rango ini="14" fin="19">Sugestiva</rango>
+          <rango ini="5" fin="9">Sugestiva</rango>
+          <rango ini="14" fin="19">Diagnóstica</rango>
+          <rango ini="20" fin="29">Diagnóstica</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas7" tipo="gastro">
+    <titulo>Truelove-Witts modificado</titulo>
+    <descripcion>
+      <![CDATA[Escala clínico-analítica útil en la valoración de la intensidad de la actividad de un paciente en brote de colitis ulcerosa.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Cortisone in ulcerative colitis. Final report on a therapeutic trial. Truelove SC., Witts LJ. Br Med J 1955;2:1041]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Deposiciones" tipo="select">
+        <opciones>
+          <opcion nombre="0-2" valor="0"></opcion>
+          <opcion nombre="3-4" valor="1"></opcion>
+          <opcion nombre="5-6" valor="2"></opcion>
+          <opcion nombre="7-9" valor="3"></opcion>
+          <opcion nombre="10" valor="4"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Diarrea nocturna" tipo="radio">
+        <opciones>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Sí" valor="1"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Sangre presente en las deposiciones" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="0%" valor="0"></opcion>
+          <opcion nombre="Menor o igual a 50%" valor="1"></opcion>
+          <opcion nombre="Entre 50% y menor o igual a 100%" valor="2"></opcion>
+          <opcion nombre="100%" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Incontinencia fecal" tipo="radio">
+        <opciones>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Sí" valor="1"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Dolor abdominal" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Leve" valor="1"></opcion>
+          <opcion nombre="Moderado" valor="2"></opcion>
+          <opcion nombre="Severo" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="6" nombre="Estado general" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Perfecto" valor="0"></opcion>
+          <opcion nombre="Muy bueno" valor="1"></opcion>
+          <opcion nombre="Bueno" valor="2"></opcion>
+          <opcion nombre="Regular" valor="3"></opcion>
+          <opcion nombre="Malo" valor="4"></opcion>
+          <opcion nombre="Muy malo" valor="5"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="7" nombre="Necesidad de antidiarreicos" tipo="radio">
+        <opciones>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Sí" valor="1"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="8" nombre="Dolor abdominal a la palpación" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Ninguno" valor="0"></opcion>
+          <opcion nombre="Leve y localizado" valor="1"></opcion>
+          <opcion nombre="Leve a moderado y difuso" valor="2"></opcion>
+          <opcion nombre="Severo o descompresión positiva" valor="3"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+          <variable id="6" tipo="opcion"></variable>
+          <variable id="7" tipo="opcion"></variable>
+          <variable id="8" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="1.01">Inactivo</rango>
+          <rango ini="2" fin="5.01">Brote leve</rango>
+          <rango ini="6" fin="11.01">Brote moderado</rango>
+          <rango ini="12">Brote grave</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas8" tipo="gastro">
+    <titulo>Indice de Harvey Bradshaw</titulo>
+    <descripcion>
+      <![CDATA[Cuantificación de actividad para la enfermedad de Crohn con buena correlación con CDAI.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[A simple index of Crohn´s-disease activity. Harvey RF, Bradshaw JM. Lancet 1980. Mar 8;1(8167):514]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Número de deposiciones"></variable>
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="Estado general" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Muy bueno" valor="0"></opcion>
+          <opcion nombre="Leve afectación del estado general" valor="1"></opcion>
+          <opcion nombre="Regular" valor="2"></opcion>
+          <opcion nombre="Malo" valor="3"></opcion>
+          <opcion nombre="Terrible" valor="4"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Dolor abdominal" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Leve" valor="1"></opcion>
+          <opcion nombre="Moderado" valor="2"></opcion>
+          <opcion nombre="Severo" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Masa abdominal" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+          <opcion nombre="Cuestionable" valor="1"></opcion>
+          <opcion nombre="Definida" valor="2"></opcion>
+          <opcion nombre="Definida y a tensión" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Artralgia" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Uveitis" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="6" nombre="Eritema nodoso" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="7" nombre="Úlceras aftoides" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="8" nombre="Pypoderma gangrenoso" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="9" nombre="Fisura anal" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="10" nombre="Nuevas fístulas" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="11" nombre="Abscesos" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="1"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1"></variable>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+          <variable id="6" tipo="opcion"></variable>
+          <variable id="7" tipo="opcion"></variable>
+          <variable id="8" tipo="opcion"></variable>
+          <variable id="9" tipo="opcion"></variable>
+          <variable id="10" tipo="opcion"></variable>
+          <variable id="11" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="6">Leve</rango>
+          <rango ini="6" fin="12">Moderado</rango>
+          <rango ini="12">Grave</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gas9" tipo="gastro">
+    <titulo>Crohn´s disease endoscopic index of severity (CDEIS)</titulo>
+    <descripcion>
+      <![CDATA[Cuantifica la actividad endoscópica en la enfermedad de Crohn.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Development and validation o fan endoscopic index of the severity of Crohn´s disease: a prospective multicenter study. Mary JY, Modigliani R. Gut 1989; 30:983-9]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Longitud afecta endoscópicamente en recto" unidad="cm"></variable>
+      <variable id="2" nombre="Longitud afecta endoscópicamente en sigma-descendente" unidad="cm"></variable>
+      <variable id="3" nombre="Longitud afecta endoscópicamente en transverso" unidad="cm"></variable>
+      <variable id="4" nombre="Longitud afecta endoscópicamente en ascendente" unidad="cm"></variable>
+      <variable id="5" nombre="Longitud afecta endoscópicamente en ileon" unidad="cm"></variable>
+      <variable id="6" nombre="Superficie ulcerada en recto" unidad="cm"></variable>
+      <variable id="7" nombre="Superficie ulcerada en sigma-descendente" unidad="cm"></variable>
+      <variable id="8" nombre="Superficie ulcerada en transverso" unidad="cm"></variable>
+      <variable id="9" nombre="Superficie ulcerada en ascendente" unidad="cm"></variable>
+      <variable id="10" nombre="Superficie ulcerada en ileon" unidad="cm"></variable>
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="Área más distal explorada en la colonoscopia" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Ileon" valor="5"></opcion>
+          <opcion nombre="Colon derecho" valor="4"></opcion>
+          <opcion nombre="Transverso" valor="3"></opcion>
+          <opcion nombre="Colon descendente-sigma" valor="2"></opcion>
+          <opcion nombre="Recto" valor="1"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Existen estenosis ulceradas" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="3"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Existen estenosis no ulceradas" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="3"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Ulceras profundas en recto" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="12"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Ulceras profundas en sigma-colon izquierdo" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="12"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="6" nombre="Ulceras profundas en transverso" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="12"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="7" nombre="Ulceras profundas en ascendente" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="12"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="8" nombre="Ulceras profundas en ileon" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="12"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="9" nombre="Ulceras profundas en recto" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="6"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="10" nombre="Ulceras superficiales en sigma-descendente" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="6"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="11" nombre="Ulceras superficiales en transverso" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="6"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="12" nombre="Ulceras superficiales en ascendente" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="6"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="13" nombre="Ulceras superficiales en ileon" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="6"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+          <variable id="6" tipo="opcion"></variable>
+          <variable id="7" tipo="opcion"></variable>
+          <variable id="8" tipo="opcion"></variable>
+          <variable id="9" tipo="opcion"></variable>
+          <variable id="10" tipo="opcion"></variable>
+          <variable id="11" tipo="opcion"></variable>
+          <variable id="12" tipo="opcion"></variable>
+          <variable id="13" tipo="opcion"></variable>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="5"></variable>
+          <variable id="6"></variable>
+          <variable id="7"></variable>
+          <variable id="8"></variable>
+          <variable id="9"></variable>
+          <variable id="10"></variable>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="gas10" tipo="gastro">
+    <titulo>Clasificación de Montreal para la enfermedad de Crohn</titulo>
+    <descripcion>
+      <![CDATA[Definición consensuada resumida del patrón de afectación de Crohn según la edad de inciio, el tipo de inflamación y la localización de la actividad.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[The Montreal classification of inflammatory bowel disease: controversies, consensus, and implications. Satsangi J et al. Gut 2006;55:1-15]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Edad de inicio" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Menor a 17 años" valor="A1"></opcion>
+          <opcion nombre="17 a 40 años" valor="A2"></opcion>
+          <opcion nombre="Mayor a 40 años" valor="A3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Localización de la afectación aftosa" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Ileon distal y/o ciego" valor="L1"></opcion>
+          <opcion nombre="Colon" valor="L2"></opcion>
+          <opcion nombre="Ileon distal y colon" valor="L3"></opcion>
+          <opcion nombre="Tracto digestivo superior" valor="L4"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Comportamiento inflamatorio" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Ni estenosante ni perforante" valor="B1"></opcion>
+          <opcion nombre="Estenosante" valor="B2"></opcion>
+          <opcion nombre="Perforante" valor="B2"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Enfermedad perianal" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="p"></opcion>
+          <opcion nombre="No" valor=" "></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="concat"></operacion>
+          <operacion tipo="concat"></operacion>
+          <operacion tipo="concat"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados decimales="texto">
+    </resultados>
+  </formula>
+
+  <formula id="hep1" tipo="hepato">
+    <titulo>APRI score</titulo>
+    <descripcion>
+      <![CDATA[Test serológico no invasivo para la estimación indirecta del grado de fibrosis hepática en pacientes con hepatitis C.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[A single noninvasiveindex can predict boyh significant fibrosis and cirrosis in patients with chronic hepatitis C. Wai CT. Hepatology 2003. Aug;38(2):518-26]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="AST" unidad="UI/L"></variable>
+      <variable id="2" nombre="Recuento plaquetario" unidad="g/L"></variable>
+      <variable id="3" nombre="Límite superior de referencia de valores normales de AST" unidad="UI/L"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable constante="100"></variable>
+          <variable id="2"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="0.5">Puede descartar fibrosis significativa con una buena sensibilidad</rango>
+          <rango ini="0.5" fin="1.5">Precisa de otros test adicionales para establecer la fibrosis real</rango>
+          <rango ini="1.5001">Puede diagnosticar fibrosis con una buena especificidad</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="hep2" tipo="hepato">
+    <titulo>Clasificación Child-Pugh</titulo>
+    <descripcion>
+      <![CDATA[Determina el estadío de la función hepática en pacientes con hepatopatía de cualquier causa en función de sus parámetros clínicos y analíticos.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Classification of chronic hepatitis: diagnosis, grading and staging. Desmet VJ et al. Hepatology 1994. Jun:19(6):1513-20]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Albúmina sérica (g/dL)" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Mayor o igual a 3,6" valor="1"></opcion>
+          <opcion nombre="Entre 2,9 y 3,5" valor="2"></opcion>
+          <opcion nombre="Menor o igual a 2,8" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Bilirrubina total (mg/dL)" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Menor a 1,9%" valor="1"></opcion>
+          <opcion nombre="Entre 2 y 3" valor="2"></opcion>
+          <opcion nombre="Mayor a 3,1" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Actividad protrombina" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Mayor a 50%" valor="1"></opcion>
+          <opcion nombre="Entre 30% y 50%" valor="2"></opcion>
+          <opcion nombre="Menor a 30%" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="Ascitis" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="1"></opcion>
+          <opcion nombre="Leve" valor="2"></opcion>
+          <opcion nombre="Grave" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Encefalopatía" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="1"></opcion>
+          <opcion nombre="Grados I-II" valor="2"></opcion>
+          <opcion nombre="Grados III-IV" valor="3"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="6.01">100-85% de supervivencia esperada a uno y dos años</rango>
+          <rango ini="7" fin="9.01">80-60% de supervivencia esperada a uno y dos años</rango>
+          <rango ini="10">45-38% de supervivencia esperada a uno y dos años</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+  
+  <formula id="hep4" tipo="hepato">
+    <titulo>Índice de Maddrey</titulo>
+    <descripcion>
+      <![CDATA[Función hepática discriminante pronóstica empleada en hepatitis aguda alcohólica para la valoración de la gravedad y la instauración de un posible tratamiento corticoideo.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[A randomized trial of prednisolone in patients with sever alcoholic hepatitis. Ramond MJ et al. N Engl J Med 1992. Feb 20;326(8):507-12]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Bilirrubina" unidad="mg/dL"></variable>
+      <variable id="2" nombre="Tiempo de protrombina" unidad="s"></variable>
+      <variable id="3" nombre="Tiempo de control de protrombina" unidad="s"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="2"></variable>
+          <variable id="3"></variable>
+          <variable constante="4.6"></variable>
+          <variable id="1"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="-"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="32.01">No puede hacer al paciente candidato a tratamiento esteroideo</rango>
+          <rango ini="32">Puede, en condiciones seleccionadas, hacer al paciente candidato a tratamiento esteroideo</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="hep5" tipo="hepato">
+    <titulo>Saturación de transferrina</titulo>
+    <descripcion>
+      <![CDATA[Estimación porcentual a partir de otros datos del perfil férrico de la saturación de transferrina. Este valor es especialmente útil al no verse influenciada como la ferritinemia o la sideremia por condicionantes de estrés metabólico agudo dando una idea real de situaciones de sobrecarga férrica (p. ej hemocromatosis).]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[The relation between chemically measured total iron/binding capacity concentrations and immunologically measured transferrin concentrations in human serum. Gambino R et al. Clin Chem 1997. Dec;43(12):2408-12]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Hierro sérico" unidad="μmol/L"></variable>
+      <variable id="2" nombre="Transferrina" unidad="g/L"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[%]]>
+        </unidad>
+        <variables>
+          <variable constante="3.982"></variable>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="hep6" tipo="hepato">
+    <titulo>Fibrosis en esteatohepatitis no alcoholica</titulo>
+    <descripcion>
+      <![CDATA[Fórmula para la estimación del grado de firbrosis en la esteatohepatitis no alcoholica mediante valores clínicos y analíticos.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patientswith NAFLD. Amgulo P et al. Hepatology 2007. Apr;45 (4):846-54]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Edad" unidad="años"></variable>
+      <variable id="2" nombre="Índice de masa corporal" unidad="kg/m2"></variable>
+      <variable id="3" nombre="AST" unidad="UI/L"></variable>
+      <variable id="4" nombre="ALT" unidad="UI/L"></variable>
+      <variable id="5" nombre="Albúmina sérica" unidad="g/dL"></variable>
+      <variable id="6" nombre="Recuento plaquetario" unidad="G/L"></variable>
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="Diabetes" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="S"></opcion>
+          <opcion nombre="No" valor="N"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <condicionescalculo>
+          <condicion id="1" valor="S"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="0.99"></variable>
+          <variable constante="-1.675"></variable>
+          <variable id="1" multi="0.037"></variable>
+          <variable id="2" multi="0.094"></variable>
+          <variable constante="1.13"></variable>
+          <variable id="6" multi="0.013"></variable>
+          <variable id="5" multi="0.66"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="-"></operacion>
+          <operacion tipo="-"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo>
+        <condicionescalculo>
+          <condicion id="1" valor="N"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="0.99"></variable>
+          <variable constante="-1.675"></variable>
+          <variable id="1" multi="0.037"></variable>
+          <variable id="2" multi="0.094"></variable>
+          <variable id="6" multi="0.013"></variable>
+          <variable id="5" multi="0.66"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="-"></operacion>
+          <operacion tipo="-"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="-1.455">Excluye la fibrosis significativa</rango>
+          <rango ini="-1.455" fin="0.676">Normal</rango>
+          <rango ini="0.676">Sugiere fibrosis con altos valores de sensibilidad y especificidad</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="hep7" tipo="hepato">
+    <titulo>Score para el diagnóstico de hepatitis autoinmune</titulo>
+    <descripcion>
+      <![CDATA[Criterios diagnósticos para la hepatitis autoinmune.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[International Autoimmune Hepatitis Group Report: Review of criteria for diagnosis of autoimmune hepatitis. Alvarez F et al. J Hepatol 1999;31:929-38]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Sexo femenino" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="2"></opcion>
+          <opcion nombre="No" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Cociente ALT/AST" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Menor a 1,5" valor="2"></opcion>
+          <opcion nombre="Entre 1,5 y 3" valor="0"></opcion>
+          <opcion nombre="Mayor a 3" valor="-2"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Gammaglobulinas o IgG elevadas" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Mayor a 2" valor="3"></opcion>
+          <opcion nombre="Entre 1,5 y 2" valor="2"></opcion>
+          <opcion nombre="Entre 1 y 1,5" valor="1"></opcion>
+          <opcion nombre="Menor a 1" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="4" nombre="ANA, SMA o LKM1" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Mayor a 1:80" valor="3"></opcion>
+          <opcion nombre="1:80" valor="2"></opcion>
+          <opcion nombre="1:40" valor="1"></opcion>
+          <opcion nombre="Menor a 1:40" valor="0"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="5" nombre="Hepatitis viral" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="-3"></opcion>
+          <opcion nombre="No" valor="3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="6" nombre="Fármacos hepatotóxicos" tipo="radio">
+        <opciones>
+          <opcion nombre="Sí" valor="-4"></opcion>
+          <opcion nombre="No" valor="1"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="7" nombre="Ingesta de alcohol diaria" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Menor a 25 gr" valor="2"></opcion>
+          <opcion nombre="Mayor a 60 gr" valor="-2"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="8" nombre="Histología hepática" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Hepatitis de la interfase" valor="3"></opcion>
+          <opcion nombre="Predominio linfoplasmocitario" valor="1"></opcion>
+          <opcion nombre="Rosetas de hepatocitos" valor="1"></opcion>
+          <opcion nombre="Ninguno de los anteriores" valor="-5"></opcion>
+          <opcion nombre="Lesiones biliares" valor="-3"></opcion>
+          <opcion nombre="Otros cambios" valor="-3"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="9" nombre="Otra enfermedad autoinmune" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Sí" valor="2"></opcion>
+          <opcion nombre="Otros anticuerpos" valor="2"></opcion>
+          <opcion nombre="HLADR3 o DR4" valor="1"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="10" nombre="Respuesta al tratamiento" tipo="select">
+        <opciones>
+          <opcion nombre=" " valor=""></opcion>
+          <opcion nombre="Completa" valor="2"></opcion>
+          <opcion nombre="Recidiva" valor="3"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+          <variable id="4" tipo="opcion"></variable>
+          <variable id="5" tipo="opcion"></variable>
+          <variable id="6" tipo="opcion"></variable>
+          <variable id="7" tipo="opcion"></variable>
+          <variable id="8" tipo="opcion"></variable>
+          <variable id="9" tipo="opcion"></variable>
+          <variable id="10" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="10">Pretratamiento: Improbable / Posttratamiento: Improbable</rango>
+          <rango ini="10" fin="12">Pretratamiento: Probable / Posttratamiento: Improbable</rango>
+          <rango ini="12" fin="15">Pretratamiento: Probable / Posttratamiento: Probable</rango>
+          <rango ini="15" fin="17">Pretratamiento: Improbable / Posttratamiento: Probable</rango>
+          <rango ini="17">Pretratamiento: Improbable / Posttratamiento: Improbable</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="hep8" tipo="hepato">
+    <titulo>Cálculo de gramos de alcohol diario</titulo>
+    <descripcion>
+      <![CDATA[Medida de alcohol ingerido diario según el volumen ingerido de bebidas standard.]]>
+    </descripcion>
+    <inputvariables>
+      <variable id="1" nombre="Cerveza de 5% vol" unidad="cc/día"></variable>
+      <variable id="2" nombre="Vino de 13% de vol" unidad="cc/día"></variable>
+      <variable id="3" nombre="Copa/bebida destilada de 40% de vol" unidad="cc/día"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <variables>
+          <variable id="1" multi="0.05"></variable>
+          <variable id="2" multi="0.1"></variable>
+          <variable id="3" multi="0.4"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+  
+  <formula id="gen1" tipo="general">
+    <titulo>Indice de Masa Corporal (IMC)</titulo>
+    <descripcion>
+      <![CDATA[El índice de masa corporal describe la relación entre el peso y la talla y su aumento está asociado a un incremento de la mortalidad global en todas las edades tanto en hombres como en mujeres.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Body-mass index and mortality in a prospective cohort of US adults. Calle EE. N Engl J Med. 1999 Oct 7; 341(15):1097-105<br/>WHO. Diet, nutrition and the prevention of chronic diseases. Report of a Joint FAO/WHO Expert Consultation. Geneva, World Health Organization, 2003 (WHO Technical Report Series, No. 916).]]></referencia>
+    <inputvariables>
+      <variable id="1" nombre="Peso" unidad="kg"></variable>
+      <variable id="2" nombre="Talla" unidad="cm"></variable>      
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="Sexo" tipo="radio">
+        <opciones>
+          <opcion nombre="Hombre" valor="H"></opcion>
+          <opcion nombre="Mujer" valor="M"></opcion>
+        </opciones>
+      </condicion>      
+    </condicionales>
+    <calculos>
+      <calculo><!-- (Peso/Sqr(Talla))-->
+        <unidad>
+          <![CDATA[kg/m&sup2;]]></unidad>
+        <variables>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable id="2"></variable>
+          <variable constante="10000"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <condiciones>
+          <condicion id="1" valor="H"></condicion>
+        </condiciones>
+        <rangos>
+          <rango fin="18.5">Bajo</rango>
+          <rango ini="18.5" fin="25">Normal</rango>
+          <rango ini="25" fin="30">Sobrepeso</rango>
+          <rango ini="30" fin="40">Obesidad</rango>
+          <rango ini="40">Obesidad Mórbida</rango>
+        </rangos>
+      </resultado>
+      <resultado>
+        <condiciones>
+          <condicion id="1" valor="M"></condicion>
+        </condiciones>
+        <rangos>
+          <rango fin="18.5">Bajo</rango>
+          <rango ini="18.5" fin="25">Normal</rango>
+          <rango ini="25" fin="30">Sobrepeso</rango>
+          <rango ini="30" fin="40">Obesidad</rango>
+          <rango ini="40">Obesidad Mórbida</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+    <ideales>
+      <ideal unidad="kg">
+        <ideal_titulo>Peso ideal</ideal_titulo>
+        <condiciones>
+          <condicion id="1" valor="H"></condicion>
+        </condiciones>
+        <calculoideal>
+          <!-- (Peso/Sqr(Talla))-->
+          <variables>
+            <variable constante="22"></variable>
+            <variable id="2"></variable>
+            <variable id="2"></variable>
+            <variable constante="10000"></variable>
+          </variables>
+          <operaciones>
+            <operacion tipo="*"></operacion>
+            <operacion tipo="*"></operacion>
+            <operacion tipo="/"></operacion>
+          </operaciones>
+        </calculoideal>
+      </ideal>
+      <ideal unidad="kg">
+        <ideal_titulo>Peso ideal</ideal_titulo>
+        <condiciones>
+          <condicion id="1" valor="M"></condicion>
+        </condiciones>
+        <calculoideal>
+          <!-- (Peso/Sqr(Talla))-->
+          <variables>
+            <variable constante="22"></variable>
+            <variable id="2"></variable>
+            <variable id="2"></variable>
+            <variable constante="10000"></variable>
+          </variables>
+          <operaciones>
+            <operacion tipo="*"></operacion>
+            <operacion tipo="*"></operacion>
+            <operacion tipo="/"></operacion>
+          </operaciones>
+        </calculoideal>
+      </ideal>
+    </ideales>
+  </formula>
+
+  <formula id="gen2" tipo="general">
+    <titulo>Superficie corporal (Dubois)</titulo>
+    <descripcion>
+      <![CDATA[La superficie corporal se emplea para el ajuste de dosis de algunos fármacos en situaciones especiales (p.ej. transplante hepático)]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Dubois D. Arch Intern Med 1916; 17:863]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Peso" unidad="kg"></variable>
+      <variable id="2" nombre="Talla" unidad="cm"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <!-- (Peso/Sqr(Talla))-->
+        <unidad>
+          <![CDATA[m&sup2;]]>
+        </unidad>
+        <variables>
+          <variable constante="0.007184"></variable>
+          <variable id="2" pow="0.725"></variable>
+          <variable id="1" pow="0.425"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="gen5" tipo="general">
+    <titulo>Sodio sérico corregido en hipertrigliceridemia</titulo>
+    <descripcion>
+      <![CDATA[Fórmula basada en como situaciones de hipertrigliceridemia pueden alterar los valores séricos reales de sodio ofreciendo datos de hiponatremia ficticias.]]>
+    </descripcion>
+    <inputvariables>
+      <variable id="1" nombre="Sodio" unidad="mEq/L"></variable>
+      <variable id="2" nombre="Triglicéridos" unidad="mmol/L"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[mEq/L]]>
+        </unidad>
+        <variables>
+          <variable id="2"></variable>
+          <variable constante="0.2"></variable>
+          <variable id="1"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="gen6" tipo="general">
+    <titulo>Excreción fraccional de sodio</titulo>
+    <descripcion>
+      <![CDATA[Relaciona la pérdida de sodio a nivel tubular renal con la función renal indicando el origen de un fracaso renal agudo como prerrenal o tubular instituido.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Low fraccional excretion of sodium. Occurrence with hemoglobinuric – and myoglobinuric – induced acute renal failure. Corwin HL. Arch Intern Med. 1984 May; 144(5):981-2]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Sodio plasmático" unidad="mEq/L"></variable>
+      <variable id="2" nombre="Creatinina plasmática" unidad="mg/dL"></variable>
+      <variable id="3" nombre="Sodio en orina" unidad="mEq/dL"></variable>
+      <variable id="4" nombre="Creatinina en orina" unidad="mg/dL"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[%]]>
+        </unidad>
+        <variables>
+          <variable id="3"></variable>
+          <variable id="2"></variable>
+          <variable id="1"></variable>
+          <variable id="4"></variable>
+          <variable constante="100"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="1">Indica fracaso renal prerrenal o síndrome hepatorrenal</rango>
+          <rango ini="1">Normal</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gen9" tipo="general">
+    <titulo>Déficit de bicarbonato</titulo>
+    <descripcion>
+      <![CDATA[Cálculo de la cantidad de bicarbonato necesario para la reposición en una situación de acidosis metabólica.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Clinical physiology of acid-base and electrolyte disorders, 4th ed, Mc Graw-Hill. Rose BD. 1994]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Peso" unidad="kg"></variable>
+      <variable id="2" nombre="Bicarbonato" unidad="mEq/dL"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[mmol]]>
+        </unidad>
+        <variables>
+          <variable constante="0.24"></variable>
+          <variable id="2"></variable>
+          <variable id="1"></variable>
+          <variable constante="0.4"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="-"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="gen10" tipo="general">
+    <titulo>Calcio sérico corregido</titulo>
+    <descripcion>
+      <![CDATA[Los niveles de calcio sérico varían en función de las cifras de albúmina. Así la hipocalcemia o hipercalcemia real ha de ser estimada sólo tras la corrección con las cifras de albúmina.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Interpretation of serum calcium in patients with abnormal serum proteins. Payne RB. Br Med J. 1973 Dec 15;4(5893):643-6]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Calcio" unidad="mg/dL"></variable>
+      <variable id="2" nombre="Albúmina" unidad="g/dL"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <variables>
+          <variable constante="4"></variable>
+          <variable id="2"></variable>
+          <variable constante="0.8"></variable>
+          <variable id="1"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="-"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="8.5">Bajo</rango>
+          <rango ini="8.5" fin="10.5">Normal</rango>
+          <rango ini="10.5">Alto</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gen12" tipo="general">
+    <titulo>Déficit de hierro</titulo>
+    <descripcion>
+      <![CDATA[Útil para el cálculo de las necesidades en la reposición intravenosa de hierro elemental.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Gordeuk VR, Brittenham GM, Bravo J, Hughes MA, Keating LJ. Prevention of iron deficiency with carbonyl iron in female blood donors. Transfusion. 1990 Mar-Apr;30(3):239-45]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Peso" unidad="kg"></variable>
+      <variable id="2" nombre="Hemoglobina actual" unidad="g/dL"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo>
+        <unidad>
+          <![CDATA[mg]]>
+        </unidad>
+        <variables>
+          <variable constante="14"></variable>
+          <variable id="2"></variable>
+          <variable id="1"></variable>
+          <variable constante="500"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="-"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="gen13" tipo="general">
+    <titulo>Escala de Glasgow</titulo>
+    <descripcion>
+      <![CDATA[Valora en nivel de consciencia.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Assesment of coma and impaired consciousness. A practical scale. Teasdale G. Lancet. 1974 Jul 13;2(7872):81-4]]>
+    </referencia>
+    <condicionales>
+      <condicion id="1" nombre="Apertura de ojos" tipo="select">
+        <opciones>
+		<opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="1"></opcion>
+          <opcion nombre="Al dolor" valor="2"></opcion>
+          <opcion nombre="Orden verbal" valor="3"></opcion>
+          <opcion nombre="Espontánea" valor="4"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Ordenes verbales" tipo="select">
+        <opciones>
+		<opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="1"></opcion>
+          <opcion nombre="Responde con sonidos incomprensibles" valor="2"></opcion>
+          <opcion nombre="Responde con respuestas no apropiadas para la pregunta emitida" valor="3"></opcion>
+          <opcion nombre="Responde con muestras de desorientación o confusión" valor="4"></opcion>
+          <opcion nombre="Responde de forma adecuada" valor="5"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="3" nombre="Respuesta motora" tipo="select">
+        <opciones>
+		<opcion nombre=" " valor=""></opcion>
+          <opcion nombre="No" valor="1"></opcion>
+          <opcion nombre="Extensión al estímulo álgico" valor="2"></opcion>
+          <opcion nombre="Flexión anormal al estímulo álgico" valor="3"></opcion>
+          <opcion nombre="Flexión normal en retirada al estímulo álgico" valor="4"></opcion>
+          <opcion nombre="Localiza el estímulo álgico" valor="5"></opcion>
+          <opcion nombre="Obedece a la voz" valor="6"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo>
+        <variables>
+          <variable id="1" tipo="opcion"></variable>
+          <variable id="2" tipo="opcion"></variable>
+          <variable id="3" tipo="opcion"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="9">Se puede valorar como estado de coma</rango>
+          <rango ini="9">No se puede valorar como estado de coma</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gen14" tipo="general">
+    <titulo>Equivalencias de corticoides (prednisona)</titulo>
+    <descripcion>
+      <![CDATA[Cálculo de dosis equivalentes de corticoides.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[The pharmacological basis of therapeutics. Goodman & Gilman´s. McGrawHill, 1997]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Dosis de" unidad="mg"></variable>
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="de" tipo="select">
+        <opciones>
+		<opcion nombre=" " valor=""></opcion>
+          <opcion nombre="prednisona" valor="1"></opcion>
+          <opcion nombre="betametasona" valor="2"></opcion>
+          <opcion nombre="cortisona" valor="3"></opcion>
+          <opcion nombre="deflazacort" valor="4"></opcion>
+          <opcion nombre="dexametasona" valor="5"></opcion>
+          <opcion nombre="fludrocortisona" valor="6"></opcion>
+          <opcion nombre="hidrocortisona" valor="7"></opcion>
+          <opcion nombre="metilprednisolona" valor="8"></opcion>
+          <opcion nombre="prednisolona" valor="9"></opcion>
+          <opcion nombre="triamcinolona" valor="10"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.12"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.15"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.4"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="4"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.8"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.8"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="8.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="41.66667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="10"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="3.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="33.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="6.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="8.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="6.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.024"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.24"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.03"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.08"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.8"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.16"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.16"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.833333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.1"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="4.166667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.125"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="3.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.833333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="4"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="6.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.8"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="33.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="8"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="2.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="26.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="5.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="6.666667"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="5"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="5.333333"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="2.5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.3"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="12.5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="3"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.375"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="10"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="2.5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="6"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.03"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.3"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0375"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.1"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="7"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.15"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="6.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.1875"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="8"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.12"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.2"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.15"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.4"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="4"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.8"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triamcinolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="9"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.8"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="betametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.15"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="cortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="6.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="deflazacort">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="dexametasona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.1875"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fludrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hidrocortisona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="5"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="metilprednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="prednisolona">
+        <unidad>
+          <![CDATA[gr]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="10"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1.25"></variable>
+        </variables>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="gen15" tipo="general">
+    <titulo>Déficit de agua libre</titulo>
+    <descripcion>
+      <![CDATA[En hipernatremias por pérdidas estima el déficit de agua libre total a reponer.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Hypernatremia. Adrogué HJ. N Engl J Med. 2000 May 18;342(20):1493-9]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Sodio sérico" unidad="mEq/L"></variable>
+      <variable id="2" nombre="Peso" unidad="kg"></variable>
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="Sexo" tipo="radio">
+        <opciones>
+          <opcion nombre="Hombre" valor="H"></opcion>
+          <opcion nombre="Mujer" valor="M"></opcion>
+        </opciones>
+      </condicion>
+      <condicion id="2" nombre="Anciano" tipo="radio">
+        <opciones>
+		  <opcion nombre="Sí" valor="S"></opcion>
+          <opcion nombre="No" valor="N"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <!-- (Factor de edad/sexo x peso) x [1 – (140 / Sodio)] -->
+      <!-- -140/Sodio + 1 * factor edad/sexo * peso -->
+      <calculo>
+        <unidad>
+          <![CDATA[L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="H"></condicion>
+          <condicion id="2" valor="N"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable constante="-140"></variable>
+          <variable id="1"></variable>
+          <variable constante="1"></variable>
+          <variable constante="0.6"></variable>
+          <variable id="2"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo>
+        <unidad>
+          <![CDATA[L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="H"></condicion>
+          <condicion id="2" valor="S"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable constante="-140"></variable>
+          <variable id="1"></variable>
+          <variable constante="1"></variable>
+          <variable constante="0.5"></variable>
+          <variable id="2"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo>
+        <unidad>
+          <![CDATA[L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="M"></condicion>
+          <condicion id="2" valor="N"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable constante="-140"></variable>
+          <variable id="1"></variable>
+          <variable constante="1"></variable>
+          <variable constante="0.5"></variable>
+          <variable id="2"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo>
+        <unidad>
+          <![CDATA[L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="M"></condicion>
+          <condicion id="2" valor="S"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable constante="-140"></variable>
+          <variable id="1"></variable>
+          <variable constante="1"></variable>
+          <variable constante="0.45"></variable>
+          <variable id="2"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="*"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+    <resultados>
+      <resultado>
+        <rangos>
+          <rango fin="1">Se ajustará la velocidad del volumen de reposición en función de las recomendaciones clínicas</rango>
+          <rango ini="1">Se ajustará la velocidad del volumen de reposición en función de las recomendaciones clínicas</rango>
+        </rangos>
+      </resultado>
+    </resultados>
+  </formula>
+
+  <formula id="gen16" tipo="general">
+    <titulo>Conversor de unidades químicas</titulo>
+    <descripcion>
+      <![CDATA[Permitir el cálculo de equivalencia de distintos elementos desde mg/dl a mmol/L o lo que es lo mismo mEq/L.]]>
+    </descripcion>
+    <inputvariables>
+      <variable id="1" nombre="Cantidad"></variable>
+    </inputvariables>
+    <condicionales>
+      <condicion id="1" nombre="Unidad" tipo="select">
+        <opciones>
+		<opcion nombre=" " valor=""></opcion>
+          <opcion nombre="mg/dl" valor="1"></opcion>
+          <opcion nombre="g/L" valor="2"></opcion>
+          <opcion nombre="mmol/L" valor="3"></opcion>
+        </opciones>
+      </condicion>
+    </condicionales>
+    <calculos>
+      <calculo resultado="alcohol">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.217"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="bilirrubina">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0171"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="calcio">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.25"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="colesterol">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.02586"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="creatinina">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0884"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="glucosa">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0555"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hemoglobina">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0006206"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="magnesio">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.411"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fosfato">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.323"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="testosterona">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0347"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triglicéridos">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="1"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0113"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="alcohol">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.00217"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="bilirrubina">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.000171"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="calcio">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0025"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="colesterol">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0002586"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="creatinina">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.000884"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="glucosa">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.000555"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hemoglobina">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.000006206"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="magnesio">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.00411"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fosfato">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.00323"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="testosterona">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.000347"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triglicéridos">
+        <unidad>
+          <![CDATA[mmol/L]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="2"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.000113"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="alcohol">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="4.608295"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="bilirrubina">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="58.479532"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="calcio">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="4"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="colesterol">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="38.669760"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="creatinina">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="11.312217"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="glucosa">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="18.01801801"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="hemoglobina">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="0.0006206"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="magnesio">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="1611.34386"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="fosfato">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="3.095975"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="testosterona">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="28.8184438"></variable>
+        </variables>
+      </calculo>
+      <calculo resultado="triglicéridos">
+        <unidad>
+          <![CDATA[mg/dL]]>
+        </unidad>
+        <condicionescalculo>
+          <condicion id="1" valor="3"></condicion>
+        </condicionescalculo>
+        <variables>
+          <variable id="1" multi="88.495575"></variable>
+        </variables>
+      </calculo>
+    </calculos>
+  </formula>
+<!--
+  <formula id="gen17" tipo="general">
+    <titulo>Medidas de estadística</titulo>
+    <descripcion>
+      <![CDATA[Cálculo de factores como el Odds Ratio, reducción del riesgo relativo y número de pacientes a tratar.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Probable inference, the law of succession, and statistical inference. Wilson EB. Journal of the American Statistical Association. 1927 Jun;22(158):209-212]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Casos en el grupo control"></variable>
+      <variable id="2" nombre="Casos en el grupo de tratamiento"></variable>
+      <variable id="3" nombre="Total de pacientes en el grupo control"></variable>
+      <variable id="4" nombre="Total de pacientes en el grupo tratamiento"></variable>
+    </inputvariables>    
+    <calculos>
+      <calculo resultado="Tasa del grupo tratamiento" tipo="resultado">
+        <variables>
+          <variable id="2"></variable>
+          <variable id="4"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Tasa en el grupo de cotrol" tipo="resultado">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Reducción del riesgo absoluto" tipo="resultado">
+        <unidad>
+          <![CDATA[%]]>
+        </unidad>
+        <variables>
+          <variable id="2"></variable>
+          <variable id="4"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable constante="0"></variable>--><!-- se va a ignorar para la operacion de acumulado--><!--
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Riesgo relativo" tipo="resultado">
+        <unidad>
+          <![CDATA[%]]>
+        </unidad>
+        <variables>
+          <variable id="2"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="1"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Reducción del riesgo relativo" tipo="resultado">
+        <unidad>
+          <![CDATA[%]]>
+        </unidad>
+        <variables>
+          <variable id="2"></variable>
+          <variable id="4"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable constante="0"></variable>--><!-- se va a ignorar para la operacion de acumulado--><!--
+          <variable id="3"></variable>
+          <variable id="1"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Número de pacientes a tratar" tipo="resultado">
+        <variables>
+          <variable id="2"></variable>
+          <variable id="4"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable constante="0"></variable>--><!-- se va a ignorar para la operacion de acumulado --><!--
+          <variable constante="1"></variable>
+          <variable constante="0"></variable>--><!-- se va a ignorar para la operacion de acumulado --><!--
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/acumulado"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+  -->
+
+  <formula id="epi1" tipo="epide">
+    <titulo>Casos y controles</titulo>
+    <descripcion visible="false">
+      <![CDATA[En un estudio tipo caso-control se parte de la idea de que conocemos quién es caso y quién control (enfermo y no enfermo si se prefiere). Queremos medir mediante el Odds Ratio si existe asociación entre un determinado factor de exposición y ser caso o enfermo. Lo que se hace entonces es determinar en el estudio quiénes de entre los controles están expuestos y quienes no, y lo mismo entre los casos. Si el factor de exposición y el ser caso no guardaran relación entre sí, sería de esperar que la distribución de la exposición entre casos y controles fuera semejante. En esta circunstancia el odds de exposición en el ambiente de enfermedad (casos) y el odds de exposición en el ambiente de no enfermedad (controles) debería ser semejante, o lo que es lo mismo el cociente entre los dos odds (Odds Ratio) no debería ser diferente desde un punto de vista estadístico de 1. Si el odds ratio (OR) es significativamente mayor de 1 significa que el odds de exposición en el ambiente de enfermedad es significativamente distinto y superior respecto del odds de exposición en el ambiente de no enfermedad y que por lo tanto el factor de exposición se asocia como riesgo con la enfermedad. Si por el contrario el odds de exposición en el ambiente de enfermedad es significativamente menor que el del ambiente de no enfermedad, el OR debería ser significativamente menor de 1, lo que implicaría que el factor de exposición está asociado con la enfermedad en el sentido de que protege de ella. Para la relación entre exposición y enfermedad tenga significación estadística el 1 no debe estar incluído entre los límites superior e inferior del intervalo de confianza del OR.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Carballo, F. – SEPD – 2011]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Expuestos enfermos"></variable>
+      <variable id="2" nombre="Expuestos No-enfermos"></variable>
+      <variable id="3" nombre="No-expuestos enfermos"></variable>
+      <variable id="4" nombre="No-expuestos No-enfermos"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo resultado="Odds de exposición en el ambiente de enfermedad:" tipo="resultado">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Odds de exposición en el ambiente de no-enfermedad:" tipo="resultado">
+        <variables>
+          <variable id="2"></variable>
+          <variable id="4"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Odds ratio (OR):" tipo="resultado">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="2"></variable>
+        </variables>
+        <operaciones>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Límite inferior del Intervalo de confianza del OR:" tipo="resultado" decimales="3">
+        <variables>
+          <variable id="1" pow="-1"></variable>
+          <variable id="2" pow="-1"></variable>
+          <variable id="3" pow="-1"></variable>
+          <variable id="4" pow="-1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="1.96"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="2"></variable>
+          <variable constante="1"></variable><!-- se va a ignorar porque la operacion de log-->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de exp -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="sqrt_acumulado"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="log"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="exp"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Límite superior del Intervalo de confianza del OR:" tipo="resultado" decimales="3">
+        <variables>
+          <variable id="1" pow="-1"></variable>
+          <variable id="2" pow="-1"></variable>
+          <variable id="3" pow="-1"></variable>
+          <variable id="4" pow="-1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="1.96"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="2"></variable>
+          <variable constante="1"></variable><!-- se va a ignorar porque la operacion de log-->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de exp -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="sqrt_acumulado"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/"></operacion>
+          <operacion tipo="log"></operacion>
+          <operacion tipo="+acumulado"></operacion>
+          <operacion tipo="exp"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="epi2" tipo="epide">
+    <titulo>Efecto del tratamiento</titulo>
+    <descripcion visible="false">
+      <![CDATA[El ensayo clínico es un estudio tipo cohortes en el que el factor de exposición (tratamiento) se asigna experimentalmente y lo que se observa es la diferencia del efecto para este factor en los tratados frente a los no tratados. Si el evento medido es positivo para el enfermo y si el tratamiento produce más efectos de este tipo beneficioso en el grupo experimental que en el control es de esperar que la tasa de eventos observados en el grupo experimental sea significativamente superior a la del grupo control. Dicho de otra forma, la probabilidad de presentar el evento de interés (riesgo en términos epidemiológicos, aunque en este caso sea un riesgo para algo bueno) en el grupo experimental sería superior a la del grupo control. Por tanto el cociente entre ambos riesgos (riesgo relativo) en el que denominador es la tasa de eventos en el grupo experimental y el denominador la del grupo control, debería ser mayor de 1. Si el intervalo de confianza calculado no incluye el 1 se puede decir que la diferencia es significativa a favor del tratamiento, concluyendo en este caso que el tratamiento es eficaz pues favorece eventos de interés positivos. Si lo que se mide como efecto es un evento negativo, por ejemplo la muerte, y el tratamiento es eficaz, sería de esperar, a diferencia de la situación anterior, que el numerador fuera menor que el denominador y el riesgo relativo (RR) menor de 1. Nuevamente si el 1 no está incluido en el intervalo de confianza se afirmaría que el tratamiento es eficaz con significación estadística pues en este caso protege de un evento negativo. La reducción de riesgo absoluta (RRA) nos indica la diferencia entre la tasa de eventos en el grupo control menos las del experimental, en términos de valor absoluto, y mide la diferencia de efecto real, mientras que la relativa, al ser el cociente entre esta diferencia de riesgo absoluta y la tasa de eventos en el grupo control, indica solo un valor relativo con menor interés en cuanto a su aplicación clínica. El inverso de RRA (1/RRA) es un entero que se redondea siempre al alza y que conocemos como número necesario a tratar (NNT) e indica cuantos sujetos deberíamos tratar con el tratamiento experimental de acuerdo con los resultados del ensayo, para obtener 1 resultado más respecto a los que habríamos obtenido con el tratamiento control.]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Carballo, F. – SEPD – 2011]]>
+    </referencia>
+    <inputvariables>
+      <variable id="1" nombre="Grupo tratamiento con efecto"></variable>
+      <variable id="2" nombre="Grupo tratamiento sin efecto"></variable>
+      <variable id="3" nombre="Grupo control con efecto"></variable>
+      <variable id="4" nombre="Grupo control sin efecto"></variable>
+    </inputvariables>
+    <calculos>
+      <calculo resultado="Tasa del efecto en el grupo tratamiento:" tipo="resultado">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable id="1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/acumulado"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Tasa del efecto en el grupo control:" tipo="resultado">
+        <variables>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="3"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="/acumulado"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Riesgo relativo (RR):" tipo="resultado">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable id="3"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/acumulado"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Límite inferior del intervalo de confianza del RR:" tipo="resultado">
+        <variables>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="-1"></variable>
+          <variable id="3" pow="-1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable constante="-1"></variable>
+          <variable constante="-1"></variable>
+          <variable constante="0"></variable> <!-- se va a ignorar para la operacion de acumulado -->
+          <variable id="1" pow="-1"></variable>
+          <variable constante="1"></variable><!-- se va a ignorar para la operacion de sqrt -->
+          <variable constante="1.96"></variable><!-- se va a ignorar para la operacion de sqrt -->
+
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable id="3"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="1"></variable><!-- se va a ignorar porque la operacion de log-->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de exp -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+acumulado"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="sqrt"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+          
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular2"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/acumulado2"></operacion>
+          <operacion tipo="log"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="exp"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Límite superior del intervalo de confianza del RR:" tipo="resultado">
+        <variables>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="-1"></variable>
+          <variable id="3" pow="-1"></variable>
+          <variable constante="0"></variable>
+          <!-- se va a ignorar para la operacion de acumulado -->
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable constante="-1"></variable>
+          <variable constante="-1"></variable>
+          <variable constante="0"></variable>
+          <!-- se va a ignorar para la operacion de acumulado -->
+          <variable id="1" pow="-1"></variable>
+          <variable constante="1"></variable>
+          <!-- se va a ignorar para la operacion de sqrt -->
+          <variable constante="1.96"></variable>
+          <!-- se va a ignorar para la operacion de sqrt -->
+
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable id="3"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable id="1"></variable>
+          <variable constante="0"></variable>
+          <!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="1"></variable>
+          <!-- se va a ignorar porque la operacion de log-->
+          <variable constante="0"></variable>
+          <!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable>
+          <!-- se va a ignorar para la operacion de exp -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="+acumulado"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="sqrt"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular2"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="/acumulado2"></operacion>
+          <operacion tipo="log"></operacion>
+          <operacion tipo="+acumulado"></operacion>
+          <operacion tipo="exp"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Reducción de Riesgo Relativa (RRR):" tipo="resultado">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable constante="-1"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="-1"></variable>
+          <variable id="3"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de abs -->
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="-1"></variable>
+          <variable id="3"></variable>
+          <variable constante="-1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="abs"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*acumulado"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Reducción de Riesgo Absoluta (RRA):" tipo="resultado">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable constante="-1"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="-1"></variable>
+          <variable id="3"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de abs -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="abs"></operacion>
+        </operaciones>
+      </calculo>
+      <calculo resultado="Número que se necesita tratar (NNT):" tipo="resultado" decimales="0">
+        <variables>
+          <variable id="1"></variable>
+          <variable id="2"></variable>
+          <variable constante="-1"></variable>
+          <variable id="1"></variable>
+          <variable id="3"></variable>
+          <variable id="4"></variable>
+          <variable constante="-1"></variable>
+          <variable id="3"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de acumulado -->
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de abs -->
+          <variable constante="-1"></variable>
+          <variable constante="0"></variable><!-- se va a ignorar para la operacion de round up -->
+        </variables>
+        <operaciones>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="acumular"></operacion>
+          <operacion tipo="+"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="*"></operacion>
+          <operacion tipo="-acumulado"></operacion>
+          <operacion tipo="abs"></operacion>
+          <operacion tipo="pow"></operacion>
+          <operacion tipo="roundup"></operacion>
+        </operaciones>
+      </calculo>
+    </calculos>
+  </formula>
+
+  <formula id="epi3" tipo="epide"><!-- las variables y calculos se tratan como caso especial -->
+    <titulo>Pruebas diagnósticas</titulo>
+    <descripcion visible="false">
+      <![CDATA[En un estudio de evaluación de pruebas diagnósticas se mide la capacidad de la prueba en cuestión para clasificar correctamente enfermos y no enfermos, que previamente han sido definidos así gracias a criterios de referencia que se denominan el estándar de oro. A los enfermos correctamente clasificados por la prueba en estudio se les denomina verdaderos positivos, así como a los no enfermos correctamente clasificados los conocemos como verdaderos negativos; los enfermos mal clasificados por la prueba son los falsos negativos y los falsos positivos aquellos de los no enfermos que también son mal clasificados. La sensibilidad es la proporción de positivos entre los enfermos de manera que mide la capacidad de la prueba entre ellos, los enfermos, de forma que una prueba muy sensible es la que presenta muy pocos falsos negativos. La sensibilidad es la probabilidad de que un sujeto dé positivo dado que está enfermo. Una sensibilidad de 1 (100%) indica que todos los sujetos enfermos dieron positivo en la prueba y ninguno dio negativo. La especificidad es la proporción de no enfermos entre los negativos, midiendo la capacidad de la prueba entre los no enfermos, de forma que una prueba muy específica es aquella que tiene muy pocos falsos positivos. La especificidad es la probabilidad de que un sujeto dé negativo dado que no está enfermo. Una especificidad de 1 (100%) señala que todos los no enfermos son negativos para la prueba y ninguno ha dado positivo. La mejor prueba posible sería la que tiene sensibilidad y especificidad  de 1 y por tanto es igual de buena que el estándar de oro.<br/>Una forma de valorar conjuntamente sensibilidad y especificidad son los denominados cocientes de probabilidad para una prueba positiva (CP+) o negativa (CP-). CP+ es el cociente cuyo numerador es la sensibilidad y su denominador 1-especificidad. Dado que la mejor prueba posible sería aquella que tuviera una sensibilidad de uno y una especificad también de 1, el mejor CP+ posible sería el de valor infinito. Es decir, cuanto más alto es el CP+ mejor es la prueba. El CP- es el cociente entre 1-sensibilidad y la especificidad, de forma que la mejor prueba tendría un CP- de 0. Dentro del estudio podemos también establecer la proporción de enfermos entre los positivos (valor predictivo positivo) y la proporción de no enfermos entre los negativos (valor predictivo negativo). Pero en general, a la hora de aplicar los resultados de los estudios a la clínica, lo que nos interesas es establecer la probabilidad postprueba dado que se conoce la sensibilidad y la especificidad. Si estimamos la prevalencia de la enfermedad en nuestro ambiente, que no tiene porque ser la misma que en el estudio de referencia, podemos establecer el odds pre-prueba que es prevalencia partido por 1-prevalencia. El odds post-prueba, en virtud del teorema de Bayes, es igual al odds-preprueba por el CP positivo para establecer la probabilidad post-prueba para un resultado positivo, o al odds-preprueba por el CP negativo para calcular la probabilidad post-prueba para un resultado negativo.<br/><br/><img src="images/pruebasdiagnosticas.jpg" border="0"/>]]>
+    </descripcion>
+    <referencia>
+      <![CDATA[Carballo, F. – SEPD – 2011]]>
+    </referencia>
+  </formula>
+
+</formulas>

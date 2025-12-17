@@ -1,0 +1,2143 @@
+// Variables
+@import "variables";
+
+////////////////////////////////////////////////////////////////////////
+// CSS de SEPD ordenado según uso en las páginas
+// CSS de uso general al inicio del fichero
+////////////////////////////////////////////////////////////////////////
+
+
+@font-face {
+    font-family: 'Archivo-Thin';
+    src: url('../fonts/static/Archivo-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo-Regular';
+    src: url('../fonts/static/Archivo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archivo-SemiBold";
+    src: url("../fonts/static/Archivo-SemiBold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archivo-Light";
+    src: url("../fonts/static/Archivo-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-archivo-thin {
+    font-family: 'Archivo-Thin';
+    letter-spacing: 1px;
+}
+
+.font-archivo-regular {
+    font-family: 'Archivo-Regular';
+}
+
+.font-archivo-light {
+    font-family: "Archivo-Light";
+}
+
+.font-archivo-semibold {
+    font-family: "Archivo-SemiBold";
+}
+
+/* para posicionar el footer siempre en la base de la página */
+html,
+body {
+    height: 100%;
+}
+
+main {
+    min-height: 57.5%;
+    flex: 1 0 auto;
+}
+
+////////////////////////////////////////////////////////////////////////
+// CSS extra: de uso general
+////////////////////////////////////////////////////////////////////////
+
+// colores de fondo
+// para las secciones
+.bg-institucional {
+    background-color: $color-institucional;
+}
+
+.bg-institucional-secundario {
+    background-color: $color-institucional-secundario;
+}
+
+.bg-formacion {
+    background-color: $color-formacion;
+}
+
+.bg-cid {
+    background-color: $color-cid;
+}
+
+.bg-cid-secundario {
+    background-color: $color-cid-secundario;
+}
+
+.bg-congreso {
+    background-color: $color-congreso;
+}
+
+.bg-congreso-secundario {
+    background-color: $color-congreso-secundario;
+}
+
+.bg-publicaciones {
+    background-color: $color-publicaciones;
+}
+
+.bg-publicaciones-secundario {
+    background-color: $color-publicaciones-secundario;
+}
+
+.bg-prensa {
+    background-color: $color-prensa;
+}
+
+.bg-prensa-secundario {
+    background-color: $color-prensa-secundario;
+}
+
+.bg-contacto {
+    background-color: $color-contacto;
+}
+
+// otros colores de fondo
+.bg-gris-socio {
+    background-color: #D9D9D9;
+}
+
+.bg-gris-fondo {
+    background-color: $color-gris-fondo;
+}
+
+.bg-twitter {
+    background-color: $color-twitter;
+}
+
+// colores de borde
+.borde-institucional {
+    border-color: $color-institucional !important;
+}
+
+.borde-institucional-secundario {
+    border-color: $color-institucional-secundario !important;
+}
+
+.borde-formacion {
+    border-color: $color-formacion !important;
+}
+
+.borde-cid {
+    border-color: $color-cid !important;
+}
+
+.borde-congreso {
+    border-color: $color-congreso !important;
+}
+
+.borde-publicaciones {
+    border-color: $color-publicaciones !important;
+}
+
+.borde-prensa {
+    border-color: $color-prensa !important;
+}
+
+.borde-contacto {
+    border-color: $color-contacto !important;
+}
+
+.borde-gris-fondo {
+    border-color: $color-gris-fondo !important;
+}
+
+.borde-twitter {
+    border-color: $color-twitter !important;
+}
+
+// colores de texto
+.color-institucional {
+    color: $color-institucional;
+}
+
+.color-institucional-secundario {
+    color: $color-institucional-secundario;
+}
+
+.color-formacion {
+    color: $color-formacion;
+}
+
+.color-formacion-secundario {
+    color: $color-formacion-secundario;
+}
+
+.color-cid {
+    color: $color-cid;
+}
+
+.color-cid-secundario {
+    color: $color-cid-secundario;
+}
+
+.color-congreso {
+    color: $color-congreso;
+}
+
+.color-congreso-secundario {
+    color: $color-congreso-secundario;
+}
+
+.color-publicaciones {
+    color: $color-publicaciones;
+}
+
+.color-publicaciones-secundario {
+    color: $color-publicaciones-secundario;
+}
+
+.color-prensa {
+    color: $color-prensa;
+}
+
+.color-prensa-secundario {
+    color: $color-prensa-secundario;
+}
+
+.color-contacto {
+    color: $color-contacto;
+}
+
+.color-gris-fondo {
+    color: $color-gris-fondo;
+}
+
+// Callout ~ Cards
+.callout {
+    padding: 0.1rem 1rem;
+    margin: 0;
+    border: 0px solid #eee;
+    border-left-width: 5px;
+    border-radius: 0px;
+}
+
+.callout p {
+    margin-bottom: 0.5rem !important;
+}
+
+.callout p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.callout.institucional {
+    border-left-color: $color-institucional !important;
+}
+
+.callout.institucional-secundario {
+    border-left-color: $color-institucional-secundario !important;
+}
+
+.callout.formacion {
+    border-left-color: $color-formacion !important;
+}
+
+.callout.formacion-secundario {
+    border-left-color: $color-formacion-secundario !important;
+}
+
+.callout.cid {
+    border-left-color: $color-cid !important;
+}
+
+.callout.cid-secundario {
+    border-left-color: $color-cid-secundario !important;
+}
+
+.callout.congreso {
+    border-left-color: $color-congreso !important;
+}
+
+.callout.congreso-secundario {
+    border-left-color: $color-congreso-secundario !important;
+}
+
+.callout.publicaciones {
+    border-left-color: $color-publicaciones !important;
+}
+
+.callout.publicaciones-secundario {
+    border-left-color: $color-publicaciones-secundario !important;
+}
+
+.callout.prensa {
+    border-left-color: $color-prensa !important;
+}
+
+.callout.prensa-secundario {
+    border-left-color: $color-prensa-secundario !important;
+}
+
+// para eventos de calendario
+.callout.externo {
+    border-left-color: $color-evento-externo !important;
+}
+
+.callout.global {
+    border-left-color: $color-gris-fondo !important;
+}
+
+// para imagenes que son enlaces
+.callout-right {
+    border: 0px solid #eee;
+    border-right-width: 5px;
+    border-radius: 0px;
+}
+
+.callout-right.institucional {
+    border-right-color: $color-institucional !important;
+}
+
+.callout-right.institucional-secundario {
+    border-right-color: $color-institucional-secundario !important;
+}
+
+.callout-right.formacion {
+    border-right-color: $color-formacion !important;
+}
+
+.callout-right.formacion-secundario {
+    border-right-color: $color-formacion-secundario !important;
+}
+
+.callout-right.cid {
+    border-right-color: $color-cid !important;
+}
+
+.callout-right.cid-secundario {
+    border-right-color: $color-cid-secundario !important;
+}
+
+.callout-right.congreso {
+    border-right-color: $color-congreso !important;
+}
+
+.callout-right.congreso-secundario {
+    border-right-color: $color-congreso-secundario !important;
+}
+
+.callout-right.publicaciones {
+    border-right-color: $color-publicaciones !important;
+}
+
+.callout-right.publicaciones-secundario {
+    border-right-color: $color-publicaciones-secundario !important;
+}
+
+.callout-right.Comunicación,
+.callout-right.prensa {
+    border-right-color: $color-prensa !important;
+}
+
+.callout-right.Comunicación-secundario,
+.callout-right.prensa-secundario {
+    border-right-color: $color-prensa-secundario !important;
+}
+
+//////////////////////////
+// Otros CSS generales
+//////////////////////////
+.borde-medio {
+    border-width: 3px !important;
+}
+
+// tamaño medio (entre 75 y 100), utilizado en el buscador
+.w-87 {
+    width: 87% !important;
+}
+
+// falta en bootstrap????
+.w-auto {
+    width: auto !important;
+}
+
+// pointer
+.pointer {
+    cursor: pointer;
+}
+
+.text-nodeco,
+.text-nodeco:hover {
+    text-decoration: none;
+}
+
+.boton-play {
+    margin: auto !important;
+    display: table-cell !important;
+    vertical-align: middle !important;
+    width: 15%;
+    height: auto;
+}
+
+// mensaje flash success
+div[id^="alerta-flash-"] {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+// sangría, básicamente para contenido formateado en el BACK de páginas
+.sangria {
+    padding-left: 30px;
+}
+
+.maxw-100 {
+    max-width: 100% !important;
+}
+
+////////////////////////////////////////////////////////////////////////
+// CSS CABECERA: logo + redes + acceso usuarios
+////////////////////////////////////////////////////////////////////////
+.redes-sociales {
+    /* padding relacionado con acceso-usuarios */
+    padding: 1rem;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+}
+
+.acceso-usuarios-container,
+#normalLogin .card-header,
+#recordarPassword .card-header,
+#passwordReset .card-header {
+    border-radius: 0 0 $borde-radio $borde-radio;
+}
+
+.acceso-usuarios {
+    text-align: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-radius: 0 0 $borde-radio $borde-radio;
+}
+
+.acceso-usuarios button {
+    color: white !important;
+    font-weight: bold;
+    font-size: 0.9rem;
+    /* para evitar que se mueva al abrir la modal */
+    margin: auto 0 !important;
+}
+
+.acceso-usuarios button:focus {
+    outline: none !important;
+}
+
+// opciones de usuario: logout, etc..
+.acceso-usuarios .dropdown-menu {
+    top: auto;
+    margin-top: -0.3rem;
+    width: 100%;
+    min-width: 0; // evitar el default de 10rem de dropdown-menu
+    padding: 0 1rem 1rem 1rem;
+    border: 0;
+}
+
+.acceso-usuarios .dropdown-menu a {
+    text-decoration: none;
+}
+
+.hazte-socio {
+    border-radius: 0 0 $borde-radio $borde-radio;
+    font-weight: bold;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.hazte-socio a {
+    color: $color-institucional !important;
+    text-decoration: none;
+}
+
+#texto-cabecera {
+    margin-left: 0.6rem;
+    border-left: solid 2px;
+    white-space: normal;
+    width: 20rem;
+    height: 5.5rem;
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    font-family: "Archivo-Light", sans-serif;
+}
+
+
+/* institucional tiene formato especial */
+#texto-cabecera.borde-institucional {
+    border: 0 !important;
+    font-size: 1.1rem;
+    padding-top: 1.5rem;
+    padding-left: 3rem !important;
+    font-family: "Archivo-Light", sans-serif;
+}
+
+body .navbar-light .navbar-toggler {
+    color: #222;
+    border: 0;
+}
+
+////////////////////////////////////////////////////////////////////////
+// CSS Buscador + Container del buscador
+////////////////////////////////////////////////////////////////////////
+input.buscador {
+    width: 94%;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+button.buscador {
+    border: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    background: transparent;
+}
+button.buscador,
+label.buscador {
+    border-bottom: 1px solid black;
+    margin-bottom: 0;
+    width: 6%;
+}
+
+label.buscador::before {
+    content: "\01F50D";
+}
+
+button.buscador::before {
+    content: "\01F50D";
+}
+
+// pero si tiene container (según la sección) igual el borde es blanco
+.container-buscador label,
+.container-buscador input {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+// color del texto del placeholder
+// #CCC funciona tanto sobre blanco como sobre cualquier color
+input.buscador::-moz-placeholder {
+    color: #CCC;
+    opacity: 1;
+}
+
+input.buscador:-ms-input-placeholder {
+    color: #CCC;
+}
+
+input.buscador::-webkit-input-placeholder {
+    color: #CCC;
+}
+
+////////////////////////////////////////////////////////////////////////
+// CSS CABECERA: menu principal
+//////////////////f//////////////////////////////////////////////////////
+#menu-principal {
+    border-top: 2px solid #040b54;
+}
+
+#menu-principal a {
+    // font-family: "Fira Sans", sans-serif;
+    font-family: 'Archivo-Light', sans-serif;
+    color: #040b54;
+}
+
+////////////////////////////////////////////////////////////////////////
+// CSS CABECERA: menu secundario (seccion) con dropdowns y submenús
+////////////////////////////////////////////////////////////////////////
+
+#menu-principal input.buscador {
+    width: 94%;
+}
+
+// Ajuste del padding
+#menuSecundario .nav-link {
+    font-family: 'Archivo-Light', sans-serif;
+    padding: 0.1rem 0.5rem;
+}
+
+#menuSecundario .dropdown-item,
+#menuSecundario .dropdown-submenu {
+    padding: 0.25rem 0.7rem;
+}
+
+// margin del desplegable, para que no haya espacio entre item y desplegable
+.dropdown-menu {
+    /*display:block;*/
+    margin-top: 0;
+    padding: 0.1rem 0;
+    border-radius: 0 0 $borde-radio $borde-radio;
+}
+
+// Posición del submenú
+.dropdown-submenu {
+    position: relative;
+}
+
+// Opción activa con radius y color blanco (submenús activos más adelante)
+.nav-link.activo {
+    border-radius: 0 0 $borde-radio $borde-radio;
+}
+
+li.nav-link.activo>a {
+    color: white !important;
+}
+
+// Colores de la barra y opciones
+.navbar.institucional {
+    border-top: 2px solid $color-institucional;
+}
+
+.navbar.institucional a {
+    color: $color-institucional !important;
+}
+
+.navbar.formacion {
+    border-top: 2px solid $color-formacion;
+}
+
+.navbar.formacion a {
+    color: $color-formacion !important;
+}
+
+.navbar.cid {
+    border-top: 2px solid $color-cid;
+}
+
+.navbar.cid a {
+    color: $color-cid !important;
+}
+
+.navbar.congreso {
+    border-top: 2px solid $color-congreso;
+}
+
+.navbar.congreso a {
+    color: $color-congreso !important;
+}
+
+.navbar.publicaciones {
+    border-top: 2px solid $color-publicaciones;
+}
+
+.navbar.publicaciones a {
+    color: $color-publicaciones !important;
+}
+
+.navbar.Comunicación,
+.navbar.prensa {
+    border-top: 2px solid $color-prensa;
+}
+
+.navbar.Comunicación a,
+.navbar.prensa a {
+    color: $color-prensa !important;
+}
+
+.navbar.contacto {
+    border-top: 2px solid $color-contacto;
+}
+
+.navbar.contacto a {
+    color: $color-contacto !important;
+}
+
+a.navbar-toggler {
+    font-size: 1em;
+}
+
+body .navbar {
+    padding: 0.5rem 0.9rem;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+    margin: 4px !important;
+    cursor: pointer;
+    padding: 0;
+}
+
+// posición y visibilidad del submenu
+.dropdown-submenu>.dropdown-menu {
+    top: 0px;
+    left: 100%;
+    margin-top: 0px;
+    margin-left: -5px;
+    border-radius: 0 0 $borde-radio $borde-radio;
+}
+
+.dropdown-submenu:hover>.dropdown-menu,
+.nav-link.position-relative:hover>.dropdown-menu {
+    display: block;
+}
+
+// Flecha indicadora de submenú
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: $color-gris-fondo;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+// Para evitar ver el "bloque" en los últimos items con border-radius
+.dropdown-item:hover {
+    background-color: transparent;
+}
+
+// Opciones de submenú activas
+.dropdown-item.activo>a,
+.dropdown-submenu.activo>a,
+.menu-movil-activo {
+    font-weight: bold;
+}
+
+// MENU MOVIL, por defecto, escondido
+#menuSecundarioMovil {
+    display: none !important;
+}
+
+////////////////////////////////////////////////////////////////////////
+// CSS CAROUSEL, responsive guardando el aspect_Ratio
+////////////////////////////////////////////////////////////////////////
+
+// NOTA: El carousel tiene extra CSS, en el apartado CSS MEDIA
+
+// ratios para el responsive según la proporción: normal, 2+1, 3+1
+.carousel,
+.carousel-A,
+.carousel-2x1,
+.carousel-2x1A,
+.carousel-3x1 {
+    width: 100%;
+}
+
+.carousel {
+    padding-top: $carousel-ratio;
+}
+
+.carousel-A {
+    padding-top: $carousel-A-ratio;
+}
+
+.carousel-2x1 {
+    padding-top: $carousel-2x1-ratio;
+}
+
+.carousel-2x1A {
+    padding-top: $carousel-2x1A-ratio;
+}
+
+.carousel-3x1 {
+    padding-top: $carousel-3x1-ratio;
+}
+
+// para las pastillas múltiples, que también llevan carousel integrado
+.carousel-p-2 {
+    padding-top: $pastilla-ratio;
+}
+
+.carousel-p-2-doble {
+    padding-top: $pastilla-doble-ratio;
+}
+
+.carousel-p-3 {
+    padding-top: $pastilla-3-ratio;
+}
+
+.carousel-p-3-doble {
+    padding-top: $pastilla-3-doble-ratio;
+}
+
+// Lo indicadores, pegados abajo
+.carousel-indicators {
+    bottom: 0px;
+    margin-bottom: 0.4rem;
+}
+
+// Los botones prev-next más pequeños
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.pastilla-multiple.carousel-control-prev,
+.pastilla-multiple.carousel-control-next {
+    width: 8%;
+}
+
+.pastilla-multiple .carousel-control-prev-icon,
+.pastilla-multiple .carousel-control-next-icon {
+    background-size: 80% 80%;
+}
+
+// contenido e imagen
+.carousel-inner,
+.imagen-slider-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item>img {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+}
+
+// Texto y botón de las diapos, posición inicial centrado
+.carousel-caption {
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40%;
+    height: 40%;
+}
+
+// posición de los elementos: derecha-izquierda/arriba-abajo
+.carousel-caption.derecha {
+    margin-left: $margen-texto-diapo-derecha !important;
+}
+
+.carousel-caption.izquierda {
+    margin-left: $margen-texto-diapo-izquierda !important;
+}
+
+.carousel-caption.arriba {
+    top: 20px !important;
+    bottom: inherit;
+}
+
+.carousel-caption.abajo {
+    bottom: 20px !important;
+    top: inherit;
+    height: inherit;
+}
+
+// márgenes para botón y textos
+.carousel-caption a.btn {
+    padding: 0.3rem 0.5rem;
+}
+
+.carousel-caption p,
+.carousel-caption h3 {
+    margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+    line-height: 1.1rem;
+}
+
+// Cuando es carousel + imagen tambien hay que controlar la imagen
+.imagen-slider {
+    padding-top: $imagen-slider-ratio;
+}
+
+.imagen-slider-2x1 {
+    padding-top: $imagen-slider-2x1-ratio;
+}
+
+.imagen-slider-2x1A {
+    padding-top: $imagen-slider-2x1A-ratio;
+}
+
+.imagen-slider-3x1 {
+    padding-top: $imagen-slider-3x1-ratio;
+}
+
+
+// NOTA: El carousel tiene extra CSS, en el apartado CSS MEDIA
+
+////////////////////////////////////////////////////////////////////////
+// CSS para pastillas
+////////////////////////////////////////////////////////////////////////
+
+// NOTA: Las pastillas tiene extra CSS, en el apartado CSS MEDIA
+.pastilla {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0px;
+}
+
+.pastilla a {
+    color: inherit;
+}
+
+// Ratios de aspecto según tipo de pastilla
+.pastilla-p-2 {
+    padding-top: $pastilla-ratio;
+}
+
+.pastilla-p-2-doble {
+    padding-top: $pastilla-doble-ratio;
+}
+
+.pastilla-p-3 {
+    padding-top: $pastilla-3-ratio;
+}
+
+.pastilla-p-3-doble {
+    padding-top: $pastilla-3-doble-ratio;
+}
+
+.pastilla .card-header {
+    border-radius: 0 0 $borde-radio $borde-radio;
+    padding: 0.4rem 1rem !important;
+    font-weight: bold;
+}
+
+.pastilla .card-body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.pastilla .card-text p,
+.pastilla .carousel-inner p {
+    margin-bottom: 0.3rem;
+}
+
+// Pastilla tipo menú
+.pastilla-menu .card-body {
+    position: inherit;
+}
+
+// opción resaltada pastilla-menu
+.pastilla-menu a.nav-link.active {
+    color: inherit !important;
+    background-color: inherit !important;
+    font-weight: bold !important;
+}
+
+// Pastillas formato libre:
+// no tienen ratio para proporcion / position static en vez de absolute
+.card.pastilla-libre .card-body {
+    position: static !important;
+}
+
+// colores de las pastillas
+.pastilla .card-header.institucional {
+    background-color: $color-institucional;
+    font-family: 'Archivo-Light', sans-serif;
+}
+
+.pastilla .card-header.formacion {
+    background-color: $color-formacion;
+}
+
+.pastilla .card-header.cid {
+    background-color: $color-cid;
+}
+
+.pastilla .card-header.congreso {
+    background-color: $color-congreso;
+}
+
+.pastilla .card-header.publicaciones {
+    background-color: $color-publicaciones;
+}
+
+.pastilla .card-header.Comunicación {
+    .pastilla .card-header.prensa {
+        background-color: $color-prensa;
+    }
+
+    // posición del contenido en las pastillas
+    // hay que distinguir entre múltiples imágenes o imagen simple
+    // para derecha / izquierda por los botones de desplazamiento
+    // para abajo para los indicadores de slide
+    .pastilla .carousel-inner .izquierda {
+        left: 1.7rem !important;
+    }
+
+    .pastilla .izquierda {
+        left: 1rem !important;
+        // conservar margen derecho!!
+        margin-right: 1rem !important;
+    }
+
+    .pastilla .carousel-inner .derecha {
+        right: 1.7rem !important;
+    }
+
+    .pastilla .derecha {
+        right: 1rem !important;
+        // conservar margen izquierdo!!
+        margin-left: 1rem !important;
+    }
+
+    .pastilla .carousel-inner .abajo {
+        bottom: 1.5rem !important;
+    }
+
+    .pastilla .abajo {
+        bottom: 1rem !important;
+    }
+
+    .pastilla .arriba {
+        top: 2.5rem !important;
+    }
+
+    .pastilla .centro {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    // para las pastillas múltiples hay que dejar espacio para los indicadores!!
+    .pastilla .carousel .btn-group {
+        bottom: 0.2rem;
+    }
+
+    // para pastillas de vídeo (bottom -10 para youtube!!!)
+    .pastilla video {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .pastilla iframe {
+        position: absolute;
+        bottom: -10px;
+    }
+
+    .pastilla-twitter {
+        overflow: auto;
+    }
+
+    .SandboxRoot.env-bp-430 .timeline-Tweet-text {
+        line-height: 17px !important;
+        font-size: 0.98em !important;
+    }
+}
+    // NOTA: Las pastillas tiene extra CSS, en el apartado CSS MEDIA
+
+    ////////////////////////////////////////////////////////////////////////
+    // CSS para destacados
+    ////////////////////////////////////////////////////////////////////////
+
+    // Los destacados van solo con borde (clase general de borde, no hay clase específica)
+
+    // para el icono de los destacados que lo tengan
+    .icono-destacado {
+        vertical-align: bottom;
+    }
+
+    // Para SEPDTV y BIBLIOTECA, se utiliza un menú similar a destacados
+    .menu-destacados {
+        padding: 0.3rem auto;
+        line-height: 0.85rem !important;
+    }
+
+    .menu-destacados.institucional {
+        border: 1px solid $color-institucional;
+    }
+
+    .menu-destacados.institucional.activo {
+        background-color: $color-institucional;
+    }
+
+    .menu-destacados.publicaciones {
+        border: 1px solid $color-publicaciones;
+    }
+
+    .menu-destacados.publicaciones.activo {
+        background-color: $color-publicaciones;
+    }
+
+    .menu-destacados a {
+        color: black;
+        white-space: normal !important;
+        line-height: 1rem;
+    }
+
+    .menu-destacados a:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .menu-destacados.activo a {
+        color: white;
+    }
+
+    // Para SEPDTV y BIBLIOTECA, se utiliza un menú similar a destacados
+    .menu-destacados {
+        padding: 0.3rem auto;
+        line-height: 0.85rem !important;
+    }
+
+    .menu-destacados.institucional {
+        border: 1px solid $color-institucional;
+    }
+
+    .menu-destacados.institucional.activo {
+        background-color: $color-institucional;
+    }
+
+    .menu-destacados.formacion {
+        border: 1px solid $color-formacion;
+    }
+
+    .menu-destacados.formacion.activo {
+        background-color: $color-formacion;
+    }
+
+    .menu-destacados.publicaciones {
+        border: 1px solid $color-publicaciones;
+    }
+
+    .menu-destacados.publicaciones.activo {
+        background-color: $color-publicaciones;
+    }
+
+    .menu-destacados a {
+        color: black;
+        white-space: normal !important;
+        line-height: 1rem;
+    }
+
+    .menu-destacados a:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .menu-destacados.activo a {
+        color: white;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // CSS varios apartados de páginas
+    ////////////////////////////////////////////////////////////////////////
+    .grupo-menu-izquierda {
+        background-color: $color-gris-fondo;
+    }
+
+    .grupo-menu-izquierda.Comunicación,
+    .grupo-menu-izquierda.prensa {
+        background-color: #C8B5E6;
+    }
+
+    .grupo-menu-izquierda a {
+        color: black;
+        text-decoration: none;
+    }
+
+    // espacio para la flecha en el título
+    .grupo-menu-izquierda h5 {
+        padding-right: 1.5rem;
+        font-size: 1rem !important;
+    }
+
+    .grupo-menu-izquierda.institucional[data-activo="true"] h5 {
+        color: $color-institucional;
+        font-weight: bold;
+    }
+
+    .grupo-menu-izquierda.formacion[data-activo="true"] h5 {
+        color: #FFF;
+        font-weight: bold;
+    }
+
+    .grupo-menu-izquierda.cid[data-activo="true"] h5 {
+        color: $color-cid;
+        font-weight: bold;
+    }
+
+    .grupo-menu-izquierda.publicaciones[data-activo="true"] h5 {
+        color: $color-publicaciones;
+        font-weight: bold;
+    }
+
+    .grupo-menu-izquierda.institucional[data-activo="false"] h5 {
+        color: $color-institucional-secundario;
+    }
+
+    .grupo-menu-izquierda.formacion[data-activo="false"] h5 {
+        color: #fff;
+    }
+
+    .grupo-menu-izquierda.cid[data-activo="false"] h5 {
+        color: $color-cid-secundario;
+    }
+
+    .grupo-menu-izquierda.publicaciones[data-activo="false"] h5 {
+        color: $color-publicaciones-secundario;
+    }
+
+    .grupo-menu-izquierda.Comunicación[data-activo="false"] h5,
+    .grupo-menu-izquierda.prensa[data-activo="false"] h5 {
+        color: $color-prensa-secundario;
+    }
+
+    // FLECHAS
+    .flecha {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        top: 35%;
+        right: 10px;
+    }
+
+    .flecha-r {
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+    }
+
+    .flecha-menu-principal {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        bottom: 0;
+        left: 40%;
+        right: 40%;
+        margin-left: 3px;
+    }
+
+    // colores generales de las flechas
+    .flecha.formacion {
+        border-top: 6px solid $color-formacion;
+    }
+
+    .flecha-r.formacion {
+        border-right: 6px solid $color-formacion;
+    }
+
+    .flecha.institucional {
+        border-top: 6px solid $color-institucional;
+    }
+
+    .flecha-r.institucional {
+        border-top: 6px solid $color-institucional;
+    }
+
+    .flecha.cid {
+        border-top: 6px solid $color-cid;
+    }
+
+    .flecha-r.cid {
+        border-top: 6px solid $color-cid;
+    }
+
+    .flecha.congreso {
+        border-top: 6px solid $color-congreso;
+    }
+
+    .flecha-r.congreso {
+        border-top: 6px solid $color-congreso;
+    }
+
+    .flecha.publicaciones {
+        border-top: 6px solid $color-publicaciones;
+    }
+
+    .flecha-r.publicaciones {
+        border-left: 6px solid $color-publicaciones;
+    }
+
+    .flecha.Comunicación,
+    .flecha.prensa {
+        border-top: 6px solid $color-prensa;
+    }
+
+    .flecha-r.flecha.Comunicación,
+    .flecha-r.prensa {
+        border-top: 6px solid $color-prensa;
+    }
+
+    .flecha.contacto {
+        border-top: 6px solid $color-contacto;
+    }
+
+    .flecha-r.contacto {
+        border-top: 6px solid $color-contacto;
+    }
+
+    // Gestión especifica de flechas en menús de la izquierda activo/desplegado
+    // y para el menú principal
+    .grupo-menu-izquierda.institucional[data-activo="false"] .flecha.institucional {
+        border-top: 6px solid $color-institucional-secundario;
+    }
+
+    .grupo-menu-izquierda.institucional[data-activo="true"] a[aria-expanded="true"] .flecha.institucional,
+    .flecha-menu-principal.institucional {
+        border-bottom: 6px solid $color-institucional;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.institucional[data-activo="false"] a[aria-expanded="true"] .flecha.institucional {
+        border-bottom: 6px solid $color-institucional-secundario;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.formacion[data-activo="false"] .flecha.formacion {
+        border-top: 6px solid #FFF;
+    }
+
+    .grupo-menu-izquierda.formacion[data-activo="true"] a[aria-expanded="true"] .flecha.formacion,
+    .flecha-menu-principal.formacion {
+        border-bottom: 6px solid #FFF;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.formacion[data-activo="false"] a[aria-expanded="true"] .flecha.formacion {
+        border-bottom: 6px solid #FFF;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.formacion {
+        background-color: #CABFF0;
+    }
+
+    .grupo-menu-izquierda.cid[data-activo="false"] .flecha.cid {
+        border-top: 6px solid $color-cid-secundario;
+    }
+
+    .grupo-menu-izquierda.cid[data-activo="true"] a[aria-expanded="true"] .flecha.cid,
+    .flecha-menu-principal.cid {
+        border-bottom: 6px solid $color-cid;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.cid[data-activo="false"] a[aria-expanded="true"] .flecha.cid {
+        border-bottom: 6px solid $color-cid-secundario;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.congreso[data-activo="false"] .flecha.congreso {
+        border-top: 6px solid $color-congreso-secundario;
+    }
+
+    .grupo-menu-izquierda.congreso[data-activo="true"] a[aria-expanded="true"] .flecha.congreso,
+    .flecha-menu-principal.congreso {
+        border-bottom: 6px solid $color-congreso;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.congreso[data-activo="false"] a[aria-expanded="true"] .flecha.congreso {
+        border-bottom: 6px solid $color-congreso-secundario;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.publicaciones[data-activo="false"] .flecha.publicaciones {
+        border-top: 6px solid $color-publicaciones-secundario;
+    }
+
+    .grupo-menu-izquierda.publicaciones[data-activo="true"] a[aria-expanded="true"] .flecha.publicaciones,
+    .flecha-menu-principal.publicaciones {
+        border-bottom: 6px solid $color-publicaciones;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.publicaciones[data-activo="false"] a[aria-expanded="true"] .flecha.publicaciones {
+        border-bottom: 6px solid $color-publicaciones-secundario;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.Comunicación[data-activo="false"] .flecha.Comunicación,
+    .grupo-menu-izquierda.prensa[data-activo="false"] .flecha.prensa {
+        border-top: 6px solid $color-prensa-secundario;
+    }
+
+    .grupo-menu-izquierda.Comunicación[data-activo="true"] a[aria-expanded="true"] .flecha.Comunicación,
+    .grupo-menu-izquierda.prensa[data-activo="true"] a[aria-expanded="true"] .flecha.prensa,
+    .flecha-menu-principal.prensa {
+        border-bottom: 6px solid $color-prensa;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.Comunicación[data-activo="false"] a[aria-expanded="true"] .flecha.Comunicación,
+    .grupo-menu-izquierda.prensa[data-activo="false"] a[aria-expanded="true"] .flecha.prensa {
+        border-bottom: 6px solid #FFF;
+        border-top: 0;
+    }
+
+    .grupo-menu-izquierda.Comunicación a,
+    .grupo-menu-izquierda.prensa a {
+        color: #FFF;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // CSS para contenido
+    ////////////////////////////////////////////////////////////////////////
+
+    // contenido protegido
+    .candado {
+        display: inline;
+    }
+
+    .candado::before {
+        content: "\01F512";
+    }
+
+    // Clases específicas de formateo de contenido
+    .contenido-titulo-pagina {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .contenido-titulo-seccion {
+        border-top-width: 1px;
+        border-top-style: solid;
+        margin-bottom: 1.7rem;
+    }
+
+    .contenido-titulo-seccion span {
+        display: table;
+        border-radius: 0 0 $borde-radio $borde-radio;
+        padding: 0.4rem 1rem !important;
+        color: white;
+        font-weight: bold;
+    }
+
+    .contenido-titulo-enlace {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .contenido-subtitulo-enlace {
+        font-weight: bold;
+    }
+
+    a .contenido-subtitulo-enlace,
+    a .contenido-descripcion-enlace {
+        color: black;
+    }
+
+    //Volver arriba
+    #return-to-top {
+        opacity: 0.7;
+        position: fixed;
+        bottom: 20px;
+        right: 21%;
+        background: #040b54;
+        background: #b08cbf;
+        width: 50px;
+        height: 50px;
+        display: block;
+        text-decoration: none;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        border-radius: 35px;
+        display: none;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    #return-to-top i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 20px;
+        top: 16px;
+        font-size: 19px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        font-style: normal !important;
+    }
+
+    #return-to-top i:before {
+        content: "\00219F";
+    }
+
+    #return-to-top:hover {
+        background: #040b54;
+    }
+
+    #return-to-top:hover i {
+        color: #fff;
+    }
+
+    // para twitter
+    .twitter {
+        overflow: hidden;
+        height: 95px;
+        margin: 3% auto;
+    }
+
+    .twitter .row {
+        padding: 3px 0;
+    }
+
+    // contenido extra flotante: siempre visible al hacer scroll hacia abajo
+    .flotante {
+        height: 100%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 1rem;
+    }
+
+    .contenido-evento,
+    .contenido-listado {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 333px;
+    }
+
+    // contenido-detalle => <a> display:block para scrollspy
+    #contenido-detalle a[id]:not([id=""]) {
+        display: block;
+    }
+
+    #contenido-detalle hr {
+        margin-bottom: 2rem;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    /* REVISTAS */
+
+    .ultima-revista h5 {
+        color: $color-institucional;
+    }
+
+    .ultima-revista h2 a {
+        color: $color-institucional;
+    }
+
+    .revistas-index iframe {
+        min-height: 500px;
+        border: none;
+    }
+
+    /* ÚLTIMAS NOTICIAS */
+    .content-noticias {
+        height: 200px;
+        overflow: hidden;
+        font-size: 1em;
+        line-height: 1.1rem !important;
+        color: #040b54;
+        font-family: 'Archivo-SemiBold', sans-serif;
+    }
+
+    .content-noticias a {
+        display: block;
+        color: inherit;
+    }
+
+    // formateo de fecha - texto
+    .content-noticias .noticia-fecha {
+        float: left;
+        width: 5.5rem;
+    }
+
+    .content-noticias .noticia-texto {
+        margin-left: 5.5rem;
+    }
+
+    // Para responsive si se incluye vídeo (como en Presentación)
+    iframe {
+        max-width: 100%;
+    }
+
+    // MAPA WEB: formatear las listas
+    ul.mapa-web {
+        border-left-width: 2px;
+        border-left-style: solid;
+        list-style-type: none;
+        padding-left: 1rem;
+    }
+
+    ul.mapa-web ul {
+        list-style-type: none;
+        padding-left: 1rem;
+        max-width: 20rem;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // CSS MEDIA
+    ////////////////////////////////////////////////////////////////////////
+    @media (max-width: 1600px) {
+        #return-to-top {
+            right: 17%;
+        }
+    }
+
+    @media (max-width: 1500px) {
+        #return-to-top {
+            right: 15%;
+        }
+    }
+
+    @media (max-width: 1400px) {
+        #return-to-top {
+            right: 13%;
+        }
+    }
+
+    @media (max-width: 1300px) {
+        #return-to-top {
+            right: 13%;
+        }
+    }
+
+    @media (max-width: 1200px) {
+
+        // reducir letra en el menú principal
+        #menu-principal a {
+            font-size: 0.93em;
+        }
+
+        // el menú de formación es más largo y no cabe en 1200 -> más pequeño
+        .navbar.formacion #menuSecundario .nav-link {
+            padding: 0.1rem 0.37rem;
+            font-size: 0.93em;
+        }
+
+        #return-to-top {
+            right: 11%;
+        }
+
+        // Para slider+imagen hay que modificar el padding
+        .col-slider-con-imagen {
+            padding-right: 11px !important;
+        }
+
+        .col-imagen-en-slider {
+            padding-left: 11px !important;
+        }
+    }
+
+    @media all and (min-width: 992px) and (max-width: 1200px) {
+
+        // PASTILLAS responsive
+        // Titulo
+        .card-title {
+            font-size: 0.8rem;
+        }
+
+        // Texto interior
+        .pastilla .card-text p {
+            font-size: 0.8rem;
+            line-height: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        // Boton
+        .pastilla .btn-group {
+            right: 0.7rem;
+            bottom: 0rem;
+        }
+
+        .pastilla .btn {
+            padding: 0.25rem 0.75rem;
+        }
+
+        // FIN PASTILLAS responsive
+
+    }
+
+    @media (max-width: 992px) {
+
+        li.activo {
+            background: inherit;
+        }
+
+        li.activo.bg-institucional>a {
+            background-color: $color-institucional;
+        }
+
+        li.activo.bg-institucional-secundario>a {
+            background-color: $color-institucional-secundario;
+        }
+
+        li.activo.bg-formacion>a {
+            background-color: $color-formacion;
+        }
+
+        li.activo.bg-cid>a {
+            background-color: $color-cid;
+        }
+
+        li.activo.bg-congreso>a {
+            background-color: $color-congreso;
+        }
+
+        li.activo.bg-publicaciones>a {
+            background-color: $color-publicaciones;
+        }
+
+        li.activo.bg-prensa>a {
+            background-color: $color-prensa;
+        }
+
+        li.activo.bg-contacto>a {
+            background-color: $color-contacto;
+        }
+
+        #navbarSupportedContent {
+            margin-left: 2%;
+        }
+
+        .nav-link.activo {
+            border-radius: 0;
+        }
+
+        .nav-link.activo>a {
+            color: white;
+            border-radius: 0 0 $borde-radio-peque $borde-radio-peque;
+        }
+
+        .nav-link.bg-formacion {
+            background: none;
+        }
+
+        .container {
+            max-width: 96%;
+        }
+
+        #menu-principal.container {
+            padding: 0 !important;
+            max-width: 99.7% !important;
+            margin: 0 !important;
+        }
+
+        // las opciones menu-destacados con texto largo, reduce el tamaño
+        .menu-destacados.texto-largo a {
+            font-size: 0.8rem;
+        }
+
+        // Para slider+imagen hay que modificar el padding
+        .col-slider-con-imagen {
+            padding-right: 10px !important;
+        }
+
+        .col-imagen-en-slider {
+            padding-left: 10px !important;
+        }
+
+        // Para el menú secundario: debido a márgenes y paddings, aunque tiene expand-lg salta a 1092px
+        #menuSecundarioMovil.navbar-collapse.show,
+        #menuSecundarioMovil.collapsing {
+            display: block !important;
+        }
+
+        #menuSecundario {
+            display: none !important;
+        }
+
+        // Margen para los textos de slider
+        .carousel-caption p,
+        .carousel-caption h3 {
+            margin-bottom: 0.3rem;
+        }
+
+    }
+
+    @media all and (min-width: 768px) and (max-width: 992px) {
+
+        // CAROUSEL RESPONSIVE
+        // Indicadores, pegados más abajo
+        .carousel-indicators {
+            margin-bottom: 0.4rem;
+        }
+
+        // textos, sin tanto padding
+        .carousel-caption.abajo {
+            bottom: 10px !important;
+            padding-bottom: 10px;
+        }
+
+        .carousel-caption.arriba {
+            top: 10px !important;
+            padding-top: 10px;
+        }
+
+        // tamaños de letra responsive
+        .carousel-caption p,
+        .carousel-caption a.btn {
+            font-size: 1.2rem; // fallback
+            font-size: 1.4vw;
+        }
+
+        .carousel-caption h3 {
+            font-size: 2rem; // fallback
+            font-size: 2.5vw;
+        }
+
+        // PASTILLAS responsive
+        // Titulo
+        .card-title {
+            font-size: 0.75rem;
+        }
+
+        // Texto interior
+        .pastilla .card-text p,
+        .pastilla .carousel-inner p {
+            font-size: 1.5vw; //0.75rem;
+            line-height: 1.6vw;
+            margin-bottom: 0.3rem;
+        }
+
+        // Boton
+        .pastilla .btn-group {
+            right: 0.7rem;
+            bottom: -0.6rem;
+        }
+
+        .pastilla .btn {
+            padding: 0.2rem 0.6rem;
+        }
+
+        // FIN PASTILLAS responsive
+
+        #return-to-top {
+            right: 12%;
+        }
+
+        // Para slider+imagen hay que modificar el padding
+        .col-slider-con-imagen {
+            padding-right: 8px !important;
+        }
+
+        .col-imagen-en-slider {
+            padding-left: 8px !important;
+        }
+
+    }
+
+    @media all and (max-width: 768px) {
+
+        // CAROUSEL RESPONSIVE
+        // Indicadores, pegados más abajo
+        .carousel-indicators {
+            margin-bottom: 0.3rem;
+        }
+
+        // textos, sin tanto padding
+        .carousel-caption.abajo {
+            bottom: 10px !important;
+            padding-bottom: 5px;
+        }
+
+        .carousel-caption.arriba {
+            top: 10px !important;
+            padding-top: 5px;
+        }
+
+        // tamaños de letra responsive
+        .carousel-caption p,
+        .carousel-caption a.btn {
+            font-size: 1.3rem; // fallback
+            font-size: 1.9vw;
+            line-height: 0.8rem;
+        }
+
+        .carousel-caption h3 {
+            font-size: 2rem; // fallback
+            font-size: 2.5vw;
+        }
+
+        // Margen para los textos
+        .carousel-caption p,
+        .carousel-caption h3 {
+            margin-bottom: 0.1rem;
+        }
+
+        // y el padding de la caja de texto en caso de que la hubiera
+        .carousel-caption .p-3 {
+            padding: 0.5rem !important;
+        }
+
+        #return-to-top {
+            right: 8%;
+        }
+
+        .col-sm-7 {
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        // para el margen inferior de las pastillas cuando se mete todo en una columna
+        .pastilla.align-self-end,
+        .pastilla.mb-auto {
+            margin-bottom: 1rem !important; // igual que mb-3
+        }
+
+        // callout-right: contenido de formateo especial con códigos
+        .callout-right {
+            padding-left: 0px;
+            padding-right: 5px;
+        }
+
+        // pastillas responsive
+        // si centrado no hay margen
+        .elemento-pastilla.centro {
+            margin: 0 !important;
+        }
+
+    }
+
+    @media all and (min-width: 576px) and (max-width: 768px) {
+
+        // para las pastillas cuando la columna se muestra en horizontal
+        .col-sm-6.pastilla-pr2 {
+            padding-right: 0.5rem !important;
+        }
+
+        .col-sm-6.pastilla-pl2 {
+            padding-left: 0.5rem !important;
+        }
+
+        // Para slider+imagen hay que modificar el padding
+        .col-slider-con-imagen {
+            padding-right: 5px !important;
+        }
+
+        .col-imagen-en-slider {
+            padding-left: 5px !important;
+        }
+
+        // PASTILLAS RESPONSIVE
+        // Texto interior de las pastillas
+        .pastilla .card-text p,
+        .pastilla .carousel-inner p {
+            font-size: 4vw; //0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        // margen para texto-boton de pastillas
+        .elemento-pastilla {
+            margin: 3vw;
+        }
+
+        .pastilla .btn-sm {
+            font-size: 3.5vw;
+        }
+
+    }
+
+    @media all and (max-width: 720px) {
+
+        .flotante {
+            position: static;
+        }
+
+        .col-sm-7 {
+            padding-left: 15px !important;
+            padding-right: 10px !important;
+        }
+
+        #menu-principal input.buscador {
+            width: 90.6%;
+        }
+
+        #texto-cabecera {
+            margin-left: 0.4rem;
+            font-size: 1.2rem;
+            height: 4.5rem;
+        }
+
+        header .pl-4 {
+            padding-left: 0.5rem !important;
+        }
+
+    }
+
+    @media all and (max-width: 576px) {
+
+        // Textos cabecera
+        #texto-cabecera {
+            margin-left: 0rem;
+            padding-left: 1rem;
+            font-size: 1rem !important;
+            height: 4.5rem;
+        }
+
+        // más espacio para el texto
+        .navbar-brand {
+            margin-right: 0;
+        }
+
+        // Carousel
+        .carousel-caption.abajo {
+            bottom: 10px !important;
+            padding-bottom: 0px;
+        }
+
+        .carousel-caption.arriba {
+            top: 10px !important;
+            padding-top: 0px;
+        }
+
+        // Opciones del bloque destacados
+        .bloque-destacados .mr-4,
+        .bloque-destacados .mr-auto {
+            margin-right: 0 !important;
+            margin-bottom: 2%;
+        }
+
+        // lo mismo para el menu destacados (biblioteca/sepdtv)
+        .menu-destacados,
+        .menu-destacados-fila {
+            margin-right: 0 !important;
+            margin-bottom: 2px !important;
+        }
+
+        // Para slider+imagen hay que modificar el padding
+        .col-slider-con-imagen {
+            padding-right: 15px !important;
+        }
+
+        .col-imagen-en-slider {
+            padding-left: 15px !important;
+        }
+
+        // hay que darle un margen superior a la imagen
+        .imagen-slider-wrapper {
+            margin-top: 7px;
+        }
+
+        // pastillas -> el padding 0 horizontal cuando es xs
+        // sobresale la pastilla del contenido
+        .pastilla .card-body.p-0,
+        .pastilla .card-img-overlay.p-0 {
+            padding: 0 0.7rem !important;
+        }
+
+        // PASTILLAS RESPONSIVE
+        // Texto interior de las pastillas
+        .pastilla .card-text p,
+        .pastilla .carousel-inner p {
+            font-size: 3.5vw; //0.75rem;
+            margin-bottom: 0.7rem;
+        }
+
+        // margen para texto-boton de pastillas
+        .elemento-pastilla {
+            margin: 2vw;
+        }
+
+        .pastilla .btn-sm {
+            font-size: 3.5vw;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // CSS FOOTER: común del pie de página
+    ////////////////////////////////////////////////////////////////////////
+    footer {
+        padding-top: 1rem;
+        padding-bottom: 0;
+        /* tamaño de letra y espaciado */
+        font-size: 0.8rem;
+        line-height: 0.95rem;
+        /* fijarlo a la base de la página */
+        flex-shrink: 0;
+        background-color: #040b54;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // CSS modales: login, video, cookies
+    ////////////////////////////////////////////////////////////////////////
+    .modal .modal-header {
+        border-radius: 0 0 $borde-radio $borde-radio;
+    }
+
+    .modal-700 {
+        max-width: 700px;
+    }
+
+    .video-titulo,
+    .imagen-titulo {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 0.5rem;
+    }
+
+    .video-descripcion,
+    .imagen-descripcion {
+        margin-bottom: 0.5rem;
+    }
+
+    .consentimiento-cookies {
+        position: fixed;
+        z-index: 99999999;
+        bottom: 0;
+        left: 0;
+        min-height: 5rem;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // CSS sobrescribit defaults bootstrap
+    ////////////////////////////////////////////////////////////////////////
+
+    // para las etiquetas que ocupan dos líneas
+    form label {
+        line-height: 1rem !important;
+    }
+
+    #contenido-detalle img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    //Elemento curso del catálogo de cursos
+    .curso-catologo a {
+        color: #216a94;
+    }
+
+    .curso-catologo {
+        border: 1px solid #fff !important;
+        border-color: #fff !important;
+        border-radius: .25rem !important;
+    }
+
+    .curso-catologo:hover {
+        border: 1px solid #e6e5e5 !important;
+        border-color: #e6e5e5 !important;
+        border-radius: .25rem !important;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        color: #216a94;
+    }

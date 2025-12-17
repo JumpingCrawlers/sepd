@@ -1,0 +1,46 @@
+// Variables
+@import "variables";
+
+////////////////////////////////////////////////////////////////////////
+// CSS de elementos específicos de sepdtv
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+// CSS extra: de uso en sepdtv
+////////////////////////////////////////////////////////////////////////
+
+// Hover con descripción del vídeo
+.detalles-sepdtv {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 101%;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 12px 1px #888888;
+    width: 28rem;
+    max-height: 10rem;
+    overflow-y: auto;
+    line-height: 0.8rem;
+}
+.sepdtv-index:hover .detalles-sepdtv {
+    display: block;
+}
+
+// la miniatura es flotante, pero sin top de 1rem
+.detalles-sepdtv .flotante {
+    top: 5px;
+}
+
+// margen superior, si es todo en una columna
+@media all and (max-width: 767px) {
+
+    #videoSepdtv {
+        margin-top: 1rem !important;
+    }
+    // el hover no se muestra
+    .detalles-sepdtv {
+        display: none !important;
+    }
+
+}

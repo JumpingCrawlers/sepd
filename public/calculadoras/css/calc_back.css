@@ -1,0 +1,246 @@
+
+    .clear{
+        clear:both;
+    }
+    
+    input[type=text]{
+    	width:40px;
+    	margin-left:5px;
+    	font-size:12pt;
+    	font-weight:bold;
+    	
+    }   
+    select
+    {
+    	width:200px;
+    } 
+
+    #mainContainer
+    {
+    	font-family: Verdana;
+        font-size:12pt;
+        margin:0px;
+        padding:0px;
+        background-color:#E2EBED;
+        height:100%;
+        text-align:center;
+        width:650px;
+        text-align:left;
+        margin:0 auto;
+        background-color: #FFF;
+        
+    }
+
+    #innerContainer{
+        width:390px;
+        padding-left:30px;
+        padding-right:10px;
+        float:right;
+    }
+    
+    #titulo{
+		font-family:Arial;
+		font-size:14pt;
+		color:#80136c;
+		padding-top:10px;
+	}	
+	
+	.titulo2{
+		font-family:Arial;
+		font-size:12pt;
+		color:#FFFFFF;	
+		font-weight:bold;
+		width:100px;
+		display:inline-block;
+		text-align:right;
+	}
+	.titulo2_unidad{
+		font-family:Arial;
+		font-size:12pt;
+		color:#FFFFFF;	
+		font-weight:bold;
+		width:100px;
+		display:inline-block;
+		text-align:left;
+	}
+	
+	.titulo3{
+		font-family:Arial;
+		font-weight: bold;
+		font-size:12pt;
+		color:#505050;
+		width:100px;
+		display:inline-block;
+		text-align:right;
+	}	
+	
+	.titulo3_opcion{
+		font-family:Arial;
+		font-weight: bold;
+		font-size:12pt;
+		color:#505050;
+	}
+	
+	.titulo4{
+		font-family:Arial;
+		font-size:14pt;
+		color:#80136c;	
+		width:100px;
+		display:inline-block;
+		text-align:right;
+	}	
+	
+	.titulo4_unidad{
+		font-family:Arial;
+		font-size:14pt;
+		color:#80136c;	
+		display:inline-block;
+		text-align:left;
+	}
+	
+	.titulo5{
+		font-family:Arial;
+		font-size:16pt;
+		color:#F99212;	
+	}
+    
+    #referencia{
+        clear:both;
+        padding:20px 20px 0px 20px;
+        font-family: Arial;
+        font-size: 11pt;
+        color: #5c6b76;
+    }
+    
+    #topBar{
+        width:760px;
+        height:100px;
+    }
+    #leftMenu{
+        width:200px;
+        padding-left:10px;
+        padding-right:10px;
+        float:left;
+    }
+    #mainContent{
+        width: 520px;
+        padding-right:10px;
+        float:left;
+    }
+    /*
+    General rules
+    */
+
+    /* Active menu item */
+    #dhtmlgoodies_slidedown_menu .dhtmlgoodies_activeItem {
+        font-weight:bold;
+        color: green;
+    }
+
+    #dhtmlgoodies_slidedown_menu li{
+        list-style-type:none;
+        position:relative;
+    }        
+    #dhtmlgoodies_slidedown_menu .li_depth1{
+        border-bottom:1px dotted #000;
+    }
+    #dhtmlgoodies_slidedown_menu ul{
+        margin:0px;
+        padding:0px;
+        position:relative;
+
+    }
+
+    #dhtmlgoodies_slidedown_menu div{
+        margin:0px;
+        padding:0px;
+    }
+    /*  Layout CSS */
+    #dhtmlgoodies_slidedown_menu{
+        width:205px;
+        background-color:#E5EAED;
+    }
+
+    /* All A tags - i.e menu items. */
+    #dhtmlgoodies_slidedown_menu a{
+        color: #000;
+        text-decoration:none;
+        display:block;
+        clear:both;
+        width:170px;
+        padding-left:2px;
+    }
+
+    /* Active menu item */
+    #dhtmlgoodies_slidedown_menu .dhtmlgoodies_activeItem {
+        font-weight:bold;
+        color: #8B1078;
+    }
+
+    /*
+    A tags
+    */
+    #dhtmlgoodies_slidedown_menu .slMenuItem_depth1{    /* Main menu items */
+        padding:10px;
+        font-weight:bold;
+    }
+    #dhtmlgoodies_slidedown_menu .slMenuItem_depth2{    /* Sub menu items */
+		font-size:11pt;                                                        
+        padding:2px 2px 2px 10px;
+        
+    }
+    #dhtmlgoodies_slidedown_menu .slMenuItem_depth3{    /* Sub menu items */
+        margin-top:1px;
+        font-style:italic;
+        color:blue;
+    }
+    #dhtmlgoodies_slidedown_menu .slMenuItem_depth4{    /* Sub menu items */
+        margin-top:1px;
+        color:red;
+    }
+    #dhtmlgoodies_slidedown_menu .slMenuItem_depth5{    /* Sub menu items */
+        margin-top:1px;
+    }
+
+    /* UL tags, i.e group of menu utems.
+    It's important to add style to the UL if you're specifying margins. If not, assign the style directly
+    to the parent DIV, i.e.
+
+    #dhtmlgoodies_slidedown_menu .slideMenuDiv1
+
+    instead of
+
+    #dhtmlgoodies_slidedown_menu .slideMenuDiv1 ul
+    */
+
+    #dhtmlgoodies_slidedown_menu .slideMenuDiv1 ul{
+        padding:1px;
+    }
+    #dhtmlgoodies_slidedown_menu .slideMenuDiv2 ul{
+        margin-left:5px;
+        padding-bottom:5px;
+    }
+    #dhtmlgoodies_slidedown_menu .slideMenuDiv3 ul{
+        margin-left:10px;
+        padding:1px;
+    }
+    #dhtmlgoodies_slidedown_menu .slMenuItem_depth4 ul{
+        margin-left:15px;
+        padding:1px;
+    }
+    
+    .bl_purple {background: url("../images/bl_purple.png") no-repeat scroll 0 100% #C58FBB; width: 300px;}
+	.br_purple {background: url("../images/br_purple.png") no-repeat scroll 100% 100% transparent}
+	.tl_purple {background: url("../images/tl_purple.png") no-repeat scroll 0 0 transparent}
+	.tr_purple {background: url("../images/tr_purple.png") no-repeat scroll 100% 0 transparent; padding:10px 10px 10px 20px;clear:both;}
+	.clear_purple {font-size: 1px; height: 1px;clear:both;}    
+	
+	.t_white {background: url("../images/dot_white.png") 0 0 repeat-x; width: 400px;}
+	.b_white {background: url("../images/bdot_white.png") 0 100% repeat-x}
+	.l_white {background: url("../images/dot_white.png") 0 0 repeat-y}
+	.r_white {background: url("../images/dot_white.png") 100% 0 repeat-y}
+	.bl_white {background: url("../images/bl_white.png") 0 100% no-repeat}
+	.br_white {background: url("../images/br_white.png") 100% 100% no-repeat}
+	.tl_white {background: url("../images/tl_white.png") 0 0 no-repeat}
+	.tr_white {background: url("../images/tr_white.png") 100% 0 no-repeat; padding:10px} 
+	

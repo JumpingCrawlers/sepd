@@ -1,0 +1,27 @@
+# BEGIN
+<IfModule mod_rewrite.c>
+
+# Iniciamos la reescritura
+RewriteEngine On
+
+# Fija la carpeta raiz sobre la que crear el redireccionamiento
+
+
+# Si se solicita index.php, no reescribas la url y finaliza la ejecución. Evitamos así que cuando haya un redireccionamiento a index.php, esto se convierta en un bucle infinito
+RewriteRule ^index\.php$ - [L]
+
+###############################
+# Todo esto es una sola regla #
+###############################
+
+# Redirige sólo si el archivo no se encuentra. Si el archivo existe, llévame a el
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Redirige sólo si el directorio no se encuentra. Si el directorio existe, llévame a el
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+
+RewriteRule . index.php [L]
+</IfModule>
+# END
