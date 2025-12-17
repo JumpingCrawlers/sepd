@@ -51,7 +51,7 @@
                     <div class="container pt-2 spacebt bg-custom">
                         <ul class="buttonsleft">
                             <li class="active"><a href="/" class="linkcab">PROFESIONALES</a></li>
-                            <li><a href="https://sepd.es/grupos-trabajo" class="linkcab">GRUPOS DE TRABAJO</a></li>
+                            <li><a href="{{ config('app.url') }}/grupos-trabajo" class="linkcab">GRUPOS DE TRABAJO</a></li>
                             <li><a href="https://www.saludigestivo.es/" class="linkcab">POBLACION</a></li>
                         </ul>
                     </div>
