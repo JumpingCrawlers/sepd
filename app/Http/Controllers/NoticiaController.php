@@ -63,15 +63,11 @@ class NoticiaController extends Controller
 
     public function show(Noticia $noticia) {
         
-        // La vista de una noticias está protegida (solo conectados)
-        if (!Auth::user()) {
-            
+        // La vista de una noticia está protegida salvo que sea pública
+        if (!$noticia->publico && !Auth::user()) {
             $vista = 'auth.login';
-
         } else {
-            
             $vista = 'noticias.show';
-
         }
 
         /* página contenedora */
